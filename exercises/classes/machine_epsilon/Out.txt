@@ -1,0 +1,25 @@
+1
+Max values
+my max int = 2147483647
+MaxValue largest possible =2147483647
+Min value
+my min int = -2147483648
+MinValue returns = -2147483648
+2
+machine epsilon for doubles = 2.22044604925031E-16
+machin epsilon for float = 1.192093E-07
+check for machine epsilon float med 2^(-23) = 1.19209289550781E-07
+check for machine epsilon double med 2^(-52) = 2.22044604925031E-16
+3
+sumA-1 = 0.000000e+000 should be 1.110223e-010
+sumB-1 = 1.110223e-010 should be 1.110223e-010
+Different in the sums is due to the accumulation of round of errors, due to limitations of the floating-point representation used by the double type. The order of the addition of +1 can make a different 
+. 
+4
+d1=7.999999999999999e-001
+d2=8.000000000000000e-001
+d1==d2 ? => False
+Function approx test
+d1=7.999999999999999e-001
+d2=8.000000000000000e-001
+d1==d2 for approx function ? => True
