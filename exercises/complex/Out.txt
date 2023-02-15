@@ -1,0 +1,10 @@
+sqrt(-1) = NaN
+NaN = NaN+NaNi
+sqrt(i) = 0+1i
+e^i = 0.54+0.841i
+e^(i pi) = -1+1.22e-16i
+i^i = 0.208+0i
+ln(i) = 0+1.57i
+sin(i pi) = 0+11.5i
+sinh(i) = 0+0.841i
+cosh(i) = 0.54+0i
