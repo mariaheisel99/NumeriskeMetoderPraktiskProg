@@ -6,12 +6,11 @@ public static class main{
 	
 	public static void Main(){
 	
-	var z = sqrt(-1);
-	WriteLine($"sqrt(-1) = {z}");
-	WriteLine($"NaN = {complex.NaN}");
+	var z = new complex(-1);
+	WriteLine($"sqrt(-1) = {cmath.sqrt(z)}");
 
-	var z2 =I;
-	WriteLine($"sqrt(i) = {z2}");
+	var z2 = new complex(0,1);;
+	WriteLine($"sqrt(i) = {cmath.sqrt(z2)}");
 
         WriteLine($"e^i = {exp(z2)}");
 	

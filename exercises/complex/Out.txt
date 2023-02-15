@@ -1,6 +1,5 @@
-sqrt(-1) = NaN
-NaN = NaN+NaNi
-sqrt(i) = 0+1i
+sqrt(-1) = 6.12e-17+1i
+sqrt(i) = 0.707+0.707i
 e^i = 0.54+0.841i
 e^(i pi) = -1+1.22e-16i
 i^i = 0.208+0i
