@@ -5,10 +5,10 @@ using static System.Math;
 class Program{
 	static int Main(string [] args) {
 	string infile=null,outfile=null;
-	if (args.Length == 2) {
-        	infile = args[0];
-        	outfile = args[1];
-   	 }		
+	// if (args.Length == 2) {
+        //	infile = args[0];
+        //	outfile = args[1];
+   	 //}		
 	foreach(var arg in args){
 		var words=arg.Split(':');
 		if(words[0]=="-input")infile=words[1];
