@@ -12,6 +12,6 @@ genlist.dll : genlist.cs
 
 .PHONY : clean
 clean: 
-	rm -f main.exe
+	$(RM) *.exe *.dll [Oo]ut* log*
 
 
