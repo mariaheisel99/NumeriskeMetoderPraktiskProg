@@ -1,3 +1,2 @@
 # NumeriskeMetoderPraktiskProg
 
-Hej Laurtiz
