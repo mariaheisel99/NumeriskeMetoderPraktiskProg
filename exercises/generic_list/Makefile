@@ -1,9 +1,14 @@
-#Out.txt : main.exe
-#	mono main.exe > Out.txt
+Out.txt : main.exe
+	mono $< 1> $@ 2> log
 
-all: main.exe
-main.exe : main.cs
-	mcs -out:main.exe $^
+main.exe : main.cs genlist.dll
+	mcs -target:exe -out:$@ \
+		$(addprefix -reference:,$(filter %.dll,$^)) \
+		$(filter %.cs,$^)
+
+genlist.dll : genlist.cs
+	mcs -target:library -out:$@ $<
+
 
 .PHONY : clean
 clean: 

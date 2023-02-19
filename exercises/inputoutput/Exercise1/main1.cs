@@ -4,6 +4,7 @@ using static System.Math;
 
 class Program {
 	public static void Main(string [] args) {
+	WriteLine("test");
 		foreach(var arg in args){
 			var words = arg.Split(':');
 			if(words[0]=="-numbers"){
