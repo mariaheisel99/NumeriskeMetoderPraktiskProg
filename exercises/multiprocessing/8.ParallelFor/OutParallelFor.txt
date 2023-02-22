@@ -1,5 +1,10 @@
-nterms=500000000 nthreads=4
-nterms=500000000 sum=13.6488141274823
-real 5.49
-user 41.83
-sys 0.09
+Ordinary serial loop result:
+nterms=500000000 sum=20.6073343222888
+real 2.75
+user 2.49
+sys 0.05
+harmonic sum Parallal.For loop result:
+nterms=500000000 sum=13.9461526867225
+real 5.47
+user 41.16
+sys 0.11

@@ -15,8 +15,7 @@ main.exe : main.cs
 
 
 8.ParallelFor/OutParallelFor.txt : 8.ParallelFor/pfor.exe
-	>$@
-	$(TIME) mono 8.ParallelFor/pfor.exe -terms:$N -threads:4 >> $@
+	$(TIME) mono 8.ParallelFor/pfor.exe -terms:$N >> $@
 
 8.ParallelFor/pfor.exe : 8.ParallelFor/pfor.cs
 	mcs $<
