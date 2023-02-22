@@ -3,3 +3,15 @@ Before removing item 2
  886e-01 337e-01 778e-02
  304e-01 998e-01 672e-02
 -1.33e+00 963e-01 223e-02
+remove: removing element numner 2
+remove: newdata created
+k=0j=0
+k=1j=1
+k=2j=2
+k=3j=2
+remove: data moved
+new size = 3
+After removing item 2
+ 129e+00 248e-01 485e-02
+ 886e-01 337e-01 778e-02
+-1.33e+00 963e-01 223e-02
