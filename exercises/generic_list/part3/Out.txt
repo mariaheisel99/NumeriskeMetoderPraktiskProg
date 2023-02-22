@@ -1,0 +1,16 @@
+Words = 129.24
+n = 3
+numbers System.Double[] 
+list genlist`1[System.Double[]] 
+Words = 88.6
+n = 3
+numbers System.Double[] 
+list genlist`1[System.Double[]] 
+Words = 30.39
+n = 3
+numbers System.Double[] 
+list genlist`1[System.Double[]] 
+Words = -1.33
+n = 3
+numbers System.Double[] 
+list genlist`1[System.Double[]] 
