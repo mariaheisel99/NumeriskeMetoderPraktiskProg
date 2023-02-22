@@ -1,12 +1,10 @@
 
 Unhandled Exception:
-System.FormatException: Input string was not in a correct format.
-  at System.Number.ThrowOverflowOrFormatException (System.Boolean overflow, System.String overflowResourceKey) [0x00020] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
-  at System.Number.ParseDouble (System.ReadOnlySpan`1[T] value, System.Globalization.NumberStyles styles, System.Globalization.NumberFormatInfo info) [0x0008b] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
-  at System.Double.Parse (System.String s) [0x0001d] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
-  at Program.Main () [0x00045] in <3724c8d5ac464abda39b6a38e800639a>:0 
-[ERROR] FATAL UNHANDLED EXCEPTION: System.FormatException: Input string was not in a correct format.
-  at System.Number.ThrowOverflowOrFormatException (System.Boolean overflow, System.String overflowResourceKey) [0x00020] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
-  at System.Number.ParseDouble (System.ReadOnlySpan`1[T] value, System.Globalization.NumberStyles styles, System.Globalization.NumberFormatInfo info) [0x0008b] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
-  at System.Double.Parse (System.String s) [0x0001d] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
-  at Program.Main () [0x00045] in <3724c8d5ac464abda39b6a38e800639a>:0 
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)
+  at genlist`1[T].remove (System.Int32 i) [0x0001e] in <55b66adf2ccf48aca89abe5eac302606>:0 
+  at Program.Main () [0x000e5] in <c19f932c385047e6a674023ac3b6d0e6>:0 
+[ERROR] FATAL UNHANDLED EXCEPTION: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  at (wrapper stelemref) System.Object.virt_stelemref_sealed_class(intptr,object)
+  at genlist`1[T].remove (System.Int32 i) [0x0001e] in <55b66adf2ccf48aca89abe5eac302606>:0 
+  at Program.Main () [0x000e5] in <c19f932c385047e6a674023ac3b6d0e6>:0 

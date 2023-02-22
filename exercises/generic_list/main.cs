@@ -24,6 +24,7 @@ class Program {
         var list = new genlist<double[]>();
         char[] delimiters = {' ','\t'};
         var options = StringSplitOptions.RemoveEmptyEntries;
+	WriteLine("Before removing item 2");
         for(string line = ReadLine(); line!=null; line = ReadLine()){
                 var words = line.Split(delimiters, options);
                 //WriteLine($"Words = {words}");
@@ -32,7 +33,6 @@ class Program {
                 var numbers = new double[n];
                 for( int i=0;i<n;i++) numbers[i] = double.Parse(words[i]);
                 list.add(numbers);
-		WriteLine("Before removing item 2");
 	}
         for(int i=0;i<list.size;i++){
                 var numbers = list[i];
@@ -42,13 +42,13 @@ class Program {
 ////////////////
 
 	list.remove(2);
+	WriteLine($"new size = {list.size}");
 	WriteLine("After removing item 2");
 	for(int i=0;i<list.size;i++){
                 var numbers = list[i];
                 foreach(var number in numbers)Write($"{number : 000e+00;-0.00e+00}");
                 WriteLine();		
-		
+        	}
         return 0;
-        }
-
-}
+}//Main
+}//class

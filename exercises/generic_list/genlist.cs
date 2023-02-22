@@ -19,14 +19,19 @@ public class genlist<T>{ // alt efter hvad T er, så bliver listen under en arra
 	
 	// Exercise2
 	public void remove(int i) {
+		WriteLine($"remove: removing element numner {i}");
 		T[] newdata = new T[size - 1];
+		WriteLine($"remove: newdata created");
 		int j = 0;
 		for (int k = 0;k<size; k++){
-			if (k!=1) {
-			newdata[j] = data [k];}
-			j++;
+			WriteLine($"k={k}j={j}");
+			if(k!=i) {
+				newdata[j] = data[k];
+				j++;
+				}
 		}
-	data = newdata;
+		WriteLine($"remove: data moved");
+		data = newdata;
 	}
 
 }
