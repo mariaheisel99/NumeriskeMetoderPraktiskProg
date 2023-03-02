@@ -1,0 +1,8 @@
+set terminal svg
+set output "timgQRGS.svg"
+set xlabel "N"
+set ylabel "Time [s]"
+set title "Time for QRGS factorized"
+
+plot "time.data" with lines
+
