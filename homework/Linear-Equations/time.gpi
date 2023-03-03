@@ -4,5 +4,6 @@ set xlabel "N"
 set ylabel "Time [s]"
 set title "Time for QRGS factorized"
 
-plot "time.data" with lines
+plot "time.data" with points pt 7 title "Measured" \
+	, "Nfit.data" with lines title "1.5e-8*N^3 fit"
 
