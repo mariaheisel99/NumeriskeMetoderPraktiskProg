@@ -4,8 +4,7 @@ public class QRGS {
 public static (matrix, matrix) dec(matrix A){/* decomposition*/
                 var m = A.size2;
                 var Q = A.copy();
-                var R = new matrix(m,m);
-
+           	var R = new matrix(m,m);
                 for (int i = 0; i<m;i++){
                         R[i,i] = Q[i].norm();
                         Q[i] /= R[i,i]; //qi = ai/Rii
