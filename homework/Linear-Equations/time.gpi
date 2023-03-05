@@ -4,6 +4,7 @@ set xlabel "N"
 set ylabel "Time [s]"
 set title "Time for QRGS factorized"
 set terminal svg background "white"
+set key left top 
 
 plot [400:1100] [0:20] "time.data" with points pt 7 title "Measured" \
 	, "Nfit.data" with lines title "1.5e-8*N^3 fit"
