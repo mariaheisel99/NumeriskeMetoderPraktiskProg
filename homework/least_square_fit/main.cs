@@ -20,7 +20,7 @@ class main{
 		StreamWriter outPartA = new StreamWriter("outPartA.txt", false);
 		StreamWriter dataPartA = new StreamWriter("dataPartA.data",false);
 
-		WriteLine("Measure of radioactivity of the element ThXat time, the data is defined as:");	
+		WriteLine("Measure of radioactivity of the element ThXat time, the data is defined and solving fit by QR decomposition. The result is the vector c:");	
 		vector t = new vector(new double [] {1,2,3,4,6,9,10,13,15});
 		vector y = new vector(new double [] {117,100,88,72,53,29.5,25.2,15.2,11.1});
 
