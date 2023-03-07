@@ -17,10 +17,8 @@ public static class LeastSquare{
 		b[i] = y[i]/dy[i];
 		}
 
-		A.print("test A:");
 		//decomposing A=QR with QRGS.cs
 		var (Q,R) = QRGS.dec(A);
-		Q.print("test Q");
 		//solving with QRGS.cs
 		vector c = QRGS.solve(Q,R,b);
 		
