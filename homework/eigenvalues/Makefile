@@ -1,18 +1,29 @@
-all : main.exe matrix.dll Out.txt
+all : OutPartA.txt OutPartB.txt matrix.dll
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 DIR = ~/repos/NumeriskeMetoderPraktiskProg/matlib/matrix
 
-Out.txt : main.exe
+OutPartA.txt : mainPartA.exe
+	mono $< > $@
+OutPartB.txt : mainPartB.exe
 	mono $< > $@
 
 matrix.dll : $(DIR)/matrix.cs $(DIR)/vector.cs jacobi.cs 
 	mcs -target:library -out:./matrix.dll $^
 
-main.exe: main.cs matrix.dll
+mainPartA.exe: mainPartA.cs matrix.dll
 	mcs -target:exe -out:$@ $(DLLS) $(CODE)
 
+mainPartB.exe: mainPartB.cs matrix.dll
+	mcs -target:exe -out:$@ $(DLLS) $(CODE)
 
-i.PHONY: clean
+eigenvalues_dr.svg : eigenvalues_dr.gpi output_eigenvalues_dr.data
+	gnuplot $<
+
+eigenvalues_rmax.svg : eigenvalues_max.gpi output_eigenvalues_rmax.data
+	gnuplot $<
+
+
+.PHONY: clean
 clean:
-	-$(RM) *.txt *.exe *.dll 
+	-$(RM) *.txt *.exe *.dll *.data

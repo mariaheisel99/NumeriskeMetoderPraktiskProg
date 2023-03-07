@@ -1,0 +1,9 @@
+set terminal svg
+set output "eigenvalue_rmax.svg"
+set xlabel "rmax"
+set ylabel "e0"
+set title "Hamiltonian first eigenvalue"
+set terminal svg background "white"
+set key left top
+
+plot "output_eigenvalues_rmax.data" title "Calculated for fixed rmax = 0.1"

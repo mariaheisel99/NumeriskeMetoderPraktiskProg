@@ -7,7 +7,7 @@ public class main{
 
 	WriteLine("Part A:");
 	WriteLine("Genereate random 3x3 matrix A");
-	var A = matrix.random_matrix(4,4);
+	var A = matrix.random_matrix(3,3);
 	A.print("A=");	
 	
 	WriteLine("Perform eigenvalue-decomposition with jacobi algoritme");
@@ -28,6 +28,7 @@ public class main{
 	test3.print("V^T*V =");
 	WriteLine("");
 	test4.print("V*V^T =");
+		
 	}//Main
 }//class main
 

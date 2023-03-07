@@ -1,0 +1,13 @@
+set terminal svg
+set output "PlotA.svg"
+set xlabel "t time [days]"
+set ylabel "Activity (relative units)"
+set title "Radioactivity ThX (224 Ra)"
+set terminal svg background "white"
+
+set key right top
+set grid
+
+
+plot "dataPartA.data" with yerrorbars title "Measured data" \
+	, "dataPartA_fit.data" with lines title "Fit A=a*exp(-l*t)"

@@ -1,0 +1,9 @@
+set terminal svg
+set output "eigenvalue_dr.svg"
+set xlabel "dr"
+set ylabel "e0"
+set title "Hamiltonian first eigenvalue"
+set terminal svg background "white"
+set key left top
+
+plot "output_eigenvalues_dr.data" title "Calculated for fixed rmax = 10"

@@ -31,8 +31,8 @@ public class main{
 		WriteLine("Generate a square matrix A (5x5)");
 		var A2 = matrix.random_matrix(5,5);
 		A2.print("A = ");
-		WriteLine("Generate a random vector b with 8 rows");
-		var b2 = matrix.random_vector(8);
+		WriteLine("Generate a random vector b with 5 rows");
+		var b2 = matrix.random_vector(5);
 		b2.print("b = ");
 		WriteLine("");
 		WriteLine("solve Ax=b with QRx=b");
