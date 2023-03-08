@@ -2,7 +2,7 @@ using System;
 using static System.Math;
 using static System.Console;
 public static class LeastSquare{
-	public static vector solQRdec(vector x, vector y, vector dy, Func<double,double>[] f){
+	public static (vector,matrix) solQRdec(vector x, vector y, vector dy, Func<double,double>[] f){
 		int n = x.size;
 		int m = f.Length;
 		//makes matrix A with Aik=fk(xi)/dyi and bi =yi/dyi
@@ -21,8 +21,10 @@ public static class LeastSquare{
 		var (Q,R) = QRGS.dec(A);
 		//solving with QRGS.cs
 		vector c = QRGS.solve(Q,R,b);
-		
-	return c;	
+		matrix invA = QRGS.inverse(Q,R);
+		var S = invA*invA.T;
+	
+	return (c,S);	
         }
 	//solQRdec
 

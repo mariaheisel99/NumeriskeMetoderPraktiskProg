@@ -35,20 +35,25 @@ public static void Main(){
 	D.print("D=");
 	V.print("V=");
 
-	StreamWriter file1 = new StreamWriter("output_eigenvalues_dr.data");
-	StreamWriter file2 = new StreamWriter("output_eigenvalues_rmax.data");
+	StreamWriter file1 = new StreamWriter("output_eigenvalues_dr.data", false);
+	StreamWriter file2 = new StreamWriter("output_eigenvalues_rmax.data", false);
 	
 	// fixed rmax = 10
-	for(double x=0.01;x<1;x+=0.01){
-                var H1 = hamiltonian(10,x);
+	double R=9;
+	for(double dr=0.05;dr<0.5;dr+=0.05){
+                var H1 = hamiltonian(R,dr);
+		WriteLine($"dr={dr}");
+Error.WriteLine($"R={R}, dr={dr}, N={R/dr-1}");
                 var (D1,V1) = jacobi.cyclic(H1);
-                file1.WriteLine($"{x} {D1[1,1]}");
+		file1.WriteLine($"{dr} {D1[0,0]}");
 		}
 	// fixed dr = 0.1
-	for(double k=0;k<10;k++){
-                var H2 = mainB.hamiltonian(k,0.1);
+	double DR=0.1;
+	for(double rmax=2;rmax<10;rmax+=1){
+                var H2 = mainB.hamiltonian(rmax,DR);
+Error.WriteLine($"rmax={rmax}, dr={DR}, N={R/DR-1}");
                 var (D2,V2) = jacobi.cyclic(H2);
-                WriteLine($"{k} {D2[1,1]}");
+                file2.WriteLine($"{rmax} {D2[0,0]}");
 		}
 
 	file1.Close();

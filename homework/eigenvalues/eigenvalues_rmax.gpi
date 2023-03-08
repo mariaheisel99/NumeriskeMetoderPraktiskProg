@@ -2,8 +2,10 @@ set terminal svg
 set output "eigenvalue_rmax.svg"
 set xlabel "rmax"
 set ylabel "e0"
-set title "Hamiltonian first eigenvalue"
+set title "Hamiltonian e0 convergens for rmax"
 set terminal svg background "white"
 set key left top
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 pi -1 ps 1.5
+set pointintervalbox 3
 
-plot "output_eigenvalues_rmax.data" title "Calculated for fixed rmax = 0.1"
+plot "output_eigenvalues_rmax.data" with linespoints ls 1 title "Calculated for fixed dr = 0.1"

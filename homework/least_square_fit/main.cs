@@ -17,8 +17,8 @@ class main{
 		WriteLine("It is shown that QR decomposition works due to R is m x m upper triangular and Q is n x m and Q^T*Q=1");
 		
 		// definding some data and fitting it. Fitting results written to outPartA.txt
-		StreamWriter outPartA = new StreamWriter("outPartA.txt", false);
-		StreamWriter dataPartA = new StreamWriter("dataPartA.data",false);
+		StreamWriter outPartB = new StreamWriter("outPartA.txt", false);
+		StreamWriter dataPartB = new StreamWriter("dataPartA.data",false);
 
 		WriteLine("Measure of radioactivity of the element ThXat time, the data is defined and solving fit by QR decomposition. The result is the vector c:");	
 		vector t = new vector(new double [] {1,2,3,4,6,9,10,13,15});
@@ -34,20 +34,21 @@ class main{
 			dlny[i] = dy[i]/y[i];
 		}
 		
-		var c = LeastSquare.solQRdec(t, lny, dlny, fs); 		
+		var (c,S) = LeastSquare.solQRdec(t, lny, dlny, fs); 		
 		c.print("c = ");
+		S.print("S = ");
 		double lna = c[0];
 		double a = Exp(lna);
 		double lambda = -c[1];
-		outPartA.WriteLine($"lambda = {lambda:f6}");
-		outPartA.WriteLine($"T_0.5 = {Log(2)/lambda:f2} days");
-		outPartA.Close();
+		outPartB.WriteLine($"lambda = {lambda:f6}");
+		outPartB.WriteLine($"T_0.5 = {Log(2)/lambda:f2} days");
+		outPartB.Close();
 
 		//data and generate fit data
 		for(int i = 0; i<t.size;i++){
-			dataPartA.WriteLine($"{t[i]} {y[i]} {dy[i]}");
+			dataPartB.WriteLine($"{t[i]} {y[i]} {dy[i]}");
 			}
-		dataPartA.Close();
+		dataPartB.Close();
 		
 		StreamWriter dataPartA_fit = new StreamWriter("dataPartA_fit.data",false);
 		for(double i = 1.0/64;i<22;i+=1.0/64){
