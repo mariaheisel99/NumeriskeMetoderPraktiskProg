@@ -1,4 +1,4 @@
-all : Out.txt PlotA.svg
+all : Out.txt Plot.svg
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
@@ -14,11 +14,11 @@ matrix.dll : $(DIR)/matrix.cs $(DIR)/vector.cs $(DIR)/QRGS.cs ordinary_LeastSqua
 
 main.exe : main.cs matrix.dll ; $(MKEXE)
 
-PlotA.svg : PlotA.gpi dataPartABC.data dataPartABC_fit.data
+Plot.svg : Plot.gpi dataPartABC.data dataPartABC_fit.data
 	gnuplot $<
 	
 
 
 i.PHONY: clean
 clean:
-	-$(RM) out* *.txt *.exe *.dll 
+	-$(RM) out* *.txt *.exe *.dll *.data
