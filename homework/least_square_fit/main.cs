@@ -17,8 +17,8 @@ class main{
 		WriteLine("It is shown that QR decomposition works due to R is m x m upper triangular and Q is n x m and Q^T*Q=1");
 		
 		// definding some data and fitting it. Fitting results written to outPartA.txt
-		StreamWriter outPartB = new StreamWriter("outPartA.txt", false);
-		StreamWriter dataPartB = new StreamWriter("dataPartA.data",false);
+		StreamWriter outPartB = new StreamWriter("outPartB.txt", false);
+		StreamWriter dataPartABC = new StreamWriter("dataPartABC.data",false);
 
 		WriteLine("Measure of radioactivity of the element ThXat time, the data is defined and solving fit by QR decomposition. The result is the vector c:");	
 		vector t = new vector(new double [] {1,2,3,4,6,9,10,13,15});
@@ -36,26 +36,30 @@ class main{
 		
 		var (c,S) = LeastSquare.solQRdec(t, lny, dlny, fs); 		
 		c.print("c = ");
-		S.print("S = ");
-		double lna = c[0];
-		double a = Exp(lna);
-		double lambda = -c[1];
-		outPartB.WriteLine($"lambda = {lambda:f6}");
-		outPartB.WriteLine($"T_0.5 = {Log(2)/lambda:f2} days");
+		S.print("covariance matrix S = ");
+		double lna = c[0]; double lna_err = Sqrt(S[0,0]);
+		double a = Exp(lna); double a_err = Exp(lna_err);
+		double lambda = -c[1]; double lambda_err = Sqrt(S[1,1]);
+		outPartB.WriteLine("Reults with calculated uncertanities from the covariance matrix (printed in Out.txt)");
+		outPartB.WriteLine($"lambda = {lambda:f5} pm {lambda_err:f4}");
+		outPartB.WriteLine($"T_0.5 = {Log(2)/lambda:f2} pm {(Log(2)/Pow(lambda,2)*lambda_err):f2} days");
+		outPartB.WriteLine("Theoretical is found to be 3.8215 days from wikipedia https://en.wikipedia.org/wiki/Radon-222. So the found halft life time does agree with modern value within two uncertainty");
 		outPartB.Close();
-
 		//data and generate fit data
 		for(int i = 0; i<t.size;i++){
-			dataPartB.WriteLine($"{t[i]} {y[i]} {dy[i]}");
+			dataPartABC.WriteLine($"{t[i]} {y[i]} {dy[i]}");
 			}
-		dataPartB.Close();
+		dataPartABC.Close();
 		
-		StreamWriter dataPartA_fit = new StreamWriter("dataPartA_fit.data",false);
+		StreamWriter dataPartABC_fit = new StreamWriter("dataPartABC_fit.data",false);
 		for(double i = 1.0/64;i<22;i+=1.0/64){
 			double y_fit = a*Exp(-lambda*i);
-			dataPartA_fit.WriteLine($"{i} {y_fit}");
+			double y_fit_minus = (a-2*a_err)*Exp(-(lambda-2*lambda_err)*i);
+			double y_fit_plus = (a+2*a_err)*Exp(-(lambda+2*lambda_err)*i);
+		
+			dataPartABC_fit.WriteLine($"{i} {y_fit} {y_fit_minus} {y_fit_plus}");
 			}
-		dataPartA_fit.Close();
+		dataPartABC_fit.Close();
 		
 		
 	} //Main

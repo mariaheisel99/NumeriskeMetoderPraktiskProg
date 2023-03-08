@@ -14,8 +14,8 @@ matrix.dll : $(DIR)/matrix.cs $(DIR)/vector.cs $(DIR)/QRGS.cs ordinary_LeastSqua
 
 main.exe : main.cs matrix.dll ; $(MKEXE)
 
-#PlotA.svg : PlotA.gpi dataPartA.data dataPartA_fit.data outPartA.txt
-#	gnuplot $<
+PlotA.svg : PlotA.gpi dataPartABC.data dataPartABC_fit.data
+	gnuplot $<
 	
 
 

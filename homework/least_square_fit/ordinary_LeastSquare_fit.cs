@@ -21,8 +21,7 @@ public static class LeastSquare{
 		var (Q,R) = QRGS.dec(A);
 		//solving with QRGS.cs
 		vector c = QRGS.solve(Q,R,b);
-		matrix invA = QRGS.inverse(Q,R);
-		var S = invA*invA.T;
+		matrix S = QRGS.inverseA(A); //finds (A^TA)^-1
 	
 	return (c,S);	
         }

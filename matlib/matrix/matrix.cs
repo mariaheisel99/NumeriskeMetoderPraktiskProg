@@ -252,4 +252,6 @@ public static vector random_vector(int n){
 	return b;	
 }
 
+		
+
 }//matrix
