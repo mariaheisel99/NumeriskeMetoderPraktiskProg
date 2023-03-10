@@ -1,4 +1,4 @@
 Reults with calculated uncertanities from the covariance matrix (printed in Out.txt)
-lambda = 0.17122 pm 0.0042
-T_0.5 = 4.05 pm 0.10 days
+lambda = 0.16989 pm 0.0070
+T_0.5 = 4.08 pm 0.17 days
 Theoretical is found to be 3.8215 days from wikipedia https://en.wikipedia.org/wiki/Radon-222. So the found halft life time does agree with modern value within two uncertainty
