@@ -19,9 +19,9 @@ public static class LeastSquare{
 
 		//decomposing A=QR with QRGS.cs
 		var (Q,R) = QRGS.dec(A);
-		//solving with QRGS.cs
+		//solvingi with QRGS.cs
 		vector c = QRGS.solve(Q,R,b);
-		matrix S = QRGS.inverseA(A); //finds (A^TA)^-1
+		matrix S = QRGS.inverse_of_ATA(R); //finds (R^TR^)-1
 	
 	return (c,S);	
         }

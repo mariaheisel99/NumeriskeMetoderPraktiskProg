@@ -37,7 +37,7 @@ public static matrix inverse(matrix Q, matrix R){/* inverse of A (symmetric) by 
 	}
 	return B;
 } //inverse	
-public static matrix inverseA(matrix A){/*inverse of A^TA*/
+public static matrix inverse_of_ATA(matrix A){/*inverse of A^TA*/
 	var B = A.T*A;
 	int n = B.size1;
 	var I = new matrix(n,n);
