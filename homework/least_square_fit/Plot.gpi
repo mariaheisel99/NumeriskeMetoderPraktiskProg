@@ -10,7 +10,7 @@ set grid
 
 set multiplot
 
-plot "dataPartABC_fit.data" using 1:3:4 with filledcurves linecolor "grey" title "Fit 2-sigma inteval" \
+plot "dataPartABC_fit.data" using 1:3:4 with filledcurves linecolor "grey" title "Fit pm 2*(da and dl) inteval" \
 	, "dataPartABC_fit.data" using 1:5 with lines ls "dashed" linecolor "red" title "fit minus da"\
 	, "dataPartABC_fit.data" using 1:6 with lines ls "dashed" linecolor "red" title "fit plus da"\
 	, "dataPartABC_fit.data" using 1:7 with lines ls "dashed" linecolor "blue" title "fit minus dl"\
