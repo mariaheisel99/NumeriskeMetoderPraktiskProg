@@ -1,0 +1,24 @@
+Cannot open assembly 'main1.exe': No such file or directory.
+Cannot open assembly 'main2.exe': No such file or directory.
+
+Unhandled Exception:
+System.IO.FileNotFoundException: Could not find file "/home/mariaheisel99/repos/NumeriskeMetoderPraktiskProg/exercises/inputoutput/Exercise2/input3.txt"
+File name: '/home/mariaheisel99/repos/NumeriskeMetoderPraktiskProg/exercises/inputoutput/Exercise2/input3.txt'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x001ef] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00061] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x00007] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at Program.Main (System.String[] args) [0x0007b] in <3d8fdd290da44271a320dfd5c0d6bb87>:0 
+[ERROR] FATAL UNHANDLED EXCEPTION: System.IO.FileNotFoundException: Could not find file "/home/mariaheisel99/repos/NumeriskeMetoderPraktiskProg/exercises/inputoutput/Exercise2/input3.txt"
+File name: '/home/mariaheisel99/repos/NumeriskeMetoderPraktiskProg/exercises/inputoutput/Exercise2/input3.txt'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x001ef] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00061] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x00007] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at Program.Main (System.String[] args) [0x0007b] in <3d8fdd290da44271a320dfd5c0d6bb87>:0 

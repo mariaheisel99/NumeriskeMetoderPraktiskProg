@@ -21,5 +21,8 @@ public static class main{
 	Write($"gamma(2) = {sfunc.gamma(2)}\n");
 	Write($"gamma(3) = {sfunc.gamma(3)}\n");
 	Write($"gamma(10) = {sfunc.gamma(10)}\n");
+	Write($"lngamma(-2) = {sfunc.lngamma(-2)}\n");
+	Write($"lngamma(4) = {sfunc.lngamma(4)}\n");
+	Write($"lngamma(10) = {sfunc.lngamma(10)}\n");
 	}
 }

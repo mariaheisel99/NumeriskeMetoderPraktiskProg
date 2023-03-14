@@ -7,5 +7,11 @@ public static class sfunc{
 	double lngamma=x*Log(x+1/(12*x-1/x/10))-x+Log(2*PI/x)/2;
 	return Exp(lngamma);
 	}
-	
+
+	public static double lngamma(double x){
+		if(x<0)return double.NaN;
+		if(x<9)return (x+1)*Log((x+1)+1/(12*(x+1)-1/(x+1)/10))-(x+1)+Log(2*PI/(x+1))/2-Log(x);
+		double lngammaE = x*Log(x+1/(12*x-1/x/10))-x+Log(2*PI/x)/2;
+		return lngammaE;
+	}
 }
