@@ -1,0 +1,10 @@
+set terminal svg
+set output "PlotA.svg"
+set xlabel "x"
+set ylabel "y"
+set title "LinearSpline Interpolation"
+set terminal svg background "white"
+set key box width 1 right top
+plot [0:8] [0:8] "datapoints.txt" using 1:2 with points pt 7 title "datapoints" \
+	, "linterpdata.txt" using 1:2 with points pt 6 title "linear interpolation points"
+
