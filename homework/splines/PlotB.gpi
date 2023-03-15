@@ -1,0 +1,20 @@
+set output "PlotB.svg"
+set terminal svg
+set xlabel "x"
+set ylabel "y"
+set terminal svg background "white"
+set multiplot layout 1,3 title "QuadricSpline Interpolation" scale 1.2,0.7
+set grid 
+set key top right
+
+plot [0:6] [-0.5:26] "data1_qspline.txt" index 0 using 1:2 with points pt 2 ps 2 title "datapoint 1" \
+	,"data1_qspline.txt" index 1 using 1:2 with points pt 6 ps 0.8 title "qinterp 1" \
+	,"data1_qspline.txt" index 1 using 1:3 with lines title "derivative" 
+
+plot [0:6] [-0.5:26] "data2_qspline.txt" index 0 using 1:2 with points pt 2 ps 2 title "datapoint 2" \
+	,"data2_qspline.txt" index 1 using 1:2 with points pt 6 ps 0.8 title "qinterp 2" \
+	,"data2_qspline.txt" index 1 using 1:3 with lines title "derivative" 
+
+plot [0:6] [-0.5:26] "data3_qspline.txt" index 0 using 1:2 with points pt 2 ps 2 title "datapoint 3" \
+	,"data3_qspline.txt" index 1 using 1:2 with points pt 6 ps 0.8 title "qinterp 3" \
+	,"data3_qspline.txt" index 1 using 1:3 with lines title "derivative" 
