@@ -27,8 +27,9 @@ public static void Main(){
 			double z = x[0]+k*(x[x.size -1]-x[0])/(N-1);
 			var fz = myspline.eval(z);
 			var dfz = myspline.derivative(z);
+			var Fz = myspline.integral(z);
 		//	Error.WriteLine($"{z} {fz} {dfz}");
-			files[i].WriteLine($"{z} {fz} {dfz}");
+			files[i].WriteLine($"{z} {fz} {dfz} {Fz}");
 		}
 		files[i].Close();
 	}//forloop	
