@@ -1,5 +1,5 @@
 # NumeriskeMetoderPraktiskProg
-| #  | homework      | A | B | C | Σ   |
+| #  |    homework   | A | B | C | Σ   |
 | -- | ------------- | - | - | - | --- |
 | 1  | LinEq         | 6 | 3 | 1 | 10  |
 | 2  | EVD           | 6 | 3 | - |  9  |
