@@ -1,4 +1,4 @@
-all : count.exe main.exe Out.txt time.data timeQRGS.svg Nfit.exe
+all : count.exe main.exe Out.txt timeQRGS.svg Nfit.exe
 TIME = time -f --portability --append --output $@
 DIR = ~/repos/NumeriskeMetoderPraktiskProg/matlib/matrix
 
@@ -29,7 +29,6 @@ Nfit.exe : Nfit.cs
                 $(filter %.cs,$^) 
 Nfit.data : Nfit.exe
 	mono $< > $@
-
 
 main.exe : main.cs QRGS.cs matrix.dll
 	mcs -target:exe -out:$@ \
