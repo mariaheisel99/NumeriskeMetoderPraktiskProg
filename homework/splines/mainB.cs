@@ -15,7 +15,6 @@ public static void Main(){
 
 	double[] cnst = new double[3];
 	cnst[0] = -4; cnst[1] = 6.5; cnst[2]=-30;
-	Error.WriteLine($" cnst = {cnst[0]}");
 	
 	for(int i =0; i<3;i++){/* test datapoints*/
 		files[i] = new StreamWriter(fileNames[i],append:false);
