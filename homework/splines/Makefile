@@ -11,7 +11,7 @@ PlotA.svg : PlotA.gpi datapoints.txt linterpdata.txt qinterpdata.txt
 PlotB.svg : PlotB.gpi data1_qspline.txt data2_qspline.txt data3_qspline.txt
 	gnuplot $<
 
-datapoints.txt linterpdata.txt qinterpdata.txt: main.exe
+datapoints.txt linterpdata.txt linintgdata.txt : main.exe
 	mono $< >$@
 	
 data1_qspline.txt : mainB.exe

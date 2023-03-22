@@ -40,7 +40,7 @@ public class qspline {
 		
 		}//derivative
 
-	public double integral (double z){
+	public double integral (double z, double k){
 		double sum = 0;
 		int i = linespline.binsearch(x,z);
 		for(int j = 0; j<i; j++){
@@ -48,7 +48,7 @@ public class qspline {
 			sum += y[j]*diff+1.0/2*diff*diff*b[j]+1.0/3*diff*diff*diff*c[j];
 		}//forloop
 		var zdiff = (z-x[i]);
-		sum += y[i]*zdiff+1.0/2*zdiff*zdiff*b[i]+1.0/3*zdiff*zdiff*zdiff*c[i];
+		sum += y[i]*zdiff+1.0/2*zdiff*zdiff*b[i]+1.0/3*zdiff*zdiff*zdiff*c[i] + k;
 
 		return sum;
 	}//integral
