@@ -50,7 +50,7 @@ public static (genlist<double>,genlist<vector>) driver(
 	double b,                    /* the end-point of the integration */
 	double h=0.01,               /* initial step-size */
 	double acc=0.01,             /* absolute accuracy goal */
-	double eps=0.01,              /* relative accuracy goal */
+	double eps=0.01              /* relative accuracy goal */
 ){
 if(a>b) throw new ArgumentException("driver: a>b");
 double x=a; vector y=ya.copy();

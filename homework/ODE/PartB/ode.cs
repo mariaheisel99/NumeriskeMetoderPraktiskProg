@@ -43,15 +43,15 @@ public static (vector, vector) rkstep45(
 
 }//rkstep45
 
-public static (genlist<double>,genlist<vector>) driver(
+public static vector driver(
 	Func<double,vector,vector> F, /* the f from dy/dx=f(x,y) */
 	double a,                    /* the start-point a */
 	vector ya,                   /* y(a) */
 	double b,                    /* the end-point of the integration */
+	genlist<double> xlist=null, genlist<vector> ylist=null,
 	double h=0.01,               /* initial step-size */
 	double acc=0.01,             /* absolute accuracy goal */
-	double eps=0.01,              /* relative accuracy goal */
-	genlist<double> xlist=null, genlist<vector> ylist=null
+	double eps=0.01              /* relative accuracy goal */
 ){
 if(a>b) throw new ArgumentException("driver: a>b");
 double x=a; vector y=ya.copy();
@@ -59,15 +59,17 @@ if(xlist!=null){xlist.add(x);}
 if(ylist!=null){ylist.add(y);}
 
 do      {
-        if(x>=b) return (xlist,ylist); /* job done */
+        if(x>=b) return y; /* job done */
         if(x+h>b) h=b-x;               /* last step should end at b */
         var (yh,err) = rkstep45(F,x,y,h);
+	Error.WriteLine("rkstep45 done");
 	vector tol = new vector(err.size);
         for(int i=0;i<y.size;i++)
 		tol[i]=Max(acc,Abs(yh[i])*eps)*Sqrt(h/(b-a));
+		Error.WriteLine($"toli");
 	bool ok=true;
 	for(int i=0;i<y.size;i++)
-		if(!err[i]<tol[i]) ok=false;
+		if(!(err[i]<tol[i])) ok=false;
 	if(ok){ 
 		x+=h; y=yh;
 		if(xlist!=null)xlist.add(x);
