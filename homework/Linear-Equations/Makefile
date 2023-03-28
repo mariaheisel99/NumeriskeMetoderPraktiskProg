@@ -1,4 +1,4 @@
-all : Time.data Out.txt TimeQRGS.svg Nfit.exe
+all : time.data Out.txt TimeQRGS.svg nfit.exe
 TIME = time -f --portability --append --output $@
 DIR = ../../matlib/matrix
 
@@ -7,7 +7,7 @@ Out.txt : main.exe
 	mono $< > $@
 
 Ns = $$(seq 400 50 1000)
-Time.data : count.exe Makefile
+time.data : count.exe Makefile
 	>$@
 	for N in $(Ns); do \
 	echo $$N; \
@@ -21,13 +21,13 @@ count.exe : count.cs matrix.dll QRGS.cs
 	mcs -target:exe -out:$@ \
 		$(filter %.cs,$^) $(addprefix -reference:,$(filter %.dll,$^))
 
-TimeQRGS.svg : time.gpi Time.data Nfit.data
+TimeQRGS.svg : time.gpi time.data nfit.data
 	gnuplot $<	
 
-Nfit.exe : Nfit.cs
+nfit.exe : nfit.cs
 	mcs -target:exe -out:$@ \
                 $(filter %.cs,$^) 
-Nfit.data : Nfit.exe
+nfit.data : nfit.exe
 	mono $< > $@
 
 main.exe : main.cs QRGS.cs matrix.dll
