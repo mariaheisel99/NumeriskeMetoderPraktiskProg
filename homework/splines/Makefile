@@ -3,7 +3,7 @@ DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
-DIR = ~/repos/NumeriskeMetoderPraktiskProg/matlib/matrix
+DIR = ../../matlib/matrix
 
 
 PlotA.svg : PlotA.gpi datapoints.txt linterpdata.txt
@@ -27,4 +27,4 @@ matlib.dll : linespline.cs qspline.cs $(DIR)/vector.cs
 
 i.PHONY: clean
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.data
+	-$(RM) out* *.txt *.exe *.dll *.data 

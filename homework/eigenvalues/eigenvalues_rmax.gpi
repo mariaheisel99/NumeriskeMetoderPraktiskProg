@@ -1,5 +1,5 @@
 set terminal svg
-set output "eigenvalue_rmax.svg"
+set output "Eigenvalue_rmax.svg"
 set xlabel "rmax"
 set ylabel "e0"
 set title "Hamiltonian e0 convergens for rmax"

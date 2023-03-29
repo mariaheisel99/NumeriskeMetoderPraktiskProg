@@ -1,16 +1,16 @@
-all : osc_friction.svg out.debug.txt
+all : Osc_friction.svg Out.debug.txt
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
-DIR = ~/repos/NumeriskeMetoderPraktiskProg/matlib
+DIR = ../../../matlib
 
 
-osc_friction.svg : osc_friction.gpi out.osc_friction.txt
+Osc_friction.svg : osc_friction.gpi Out.osc_friction.txt
 	gnuplot $<
-out.debug.txt : main.exe
+Out.debug.txt : main.exe
 	mono $< 1> $@ 2> log
-out.osc_friction.txt : main_osc_friction.exe
+Out.osc_friction.txt : main_osc_friction.exe
 	mono $< 1> $@ 2>log.osc_frition
 
 main.exe : main.cs matlib.dll 

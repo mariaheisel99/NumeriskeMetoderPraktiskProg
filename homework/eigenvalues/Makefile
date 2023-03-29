@@ -1,7 +1,7 @@
-all : OutPartA.txt OutPartB.txt eigenvalues_dr.svg eigenvalues_rmax.svg
+all : OutPartA.txt OutPartB.txt Eigenvalues_dr.svg Eigenvalues_rmax.svg
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
-DIR = ~/repos/NumeriskeMetoderPraktiskProg/matlib/matrix
+DIR = ../../matlib/matrix
 
 OutPartA.txt : mainPartA.exe
 	mono $< > $@
@@ -17,13 +17,13 @@ mainPartA.exe: mainPartA.cs matrix.dll
 mainPartB.exe: mainPartB.cs matrix.dll
 	mcs -target:exe -out:$@ $(DLLS) $(CODE)
 
-eigenvalues_dr.svg : eigenvalues_dr.gpi output_eigenvalues_dr.data
+Eigenvalues_dr.svg : eigenvalues_dr.gpi output_eigenvalues_dr.data
 	gnuplot $<
 
-eigenvalues_rmax.svg : eigenvalues_rmax.gpi output_eigenvalues_rmax.data
+Eigenvalues_rmax.svg : eigenvalues_rmax.gpi output_eigenvalues_rmax.data
 	gnuplot $<
 
 
 .PHONY: clean
 clean:
-	-$(RM) *.txt *.exe *.dll *.data
+	-$(RM) *.txt *.exe *.dll *.data *.svg

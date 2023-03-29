@@ -1,5 +1,5 @@
 set terminal svg
-set output "eigenvalue_dr.svg"
+set output "Eigenvalue_dr.svg"
 set xlabel "dr"
 set ylabel "e0"
 set title "Hamiltonian e0 convergens for dr"

@@ -3,7 +3,7 @@ DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
-DIR = ~/repos/NumeriskeMetoderPraktiskProg/matlib
+DIR = ../../../matlib
 
 LotkaVolterraSystem.svg : LotkaVolterraSystem.gpi out.LotkaVolterraSystem.txt
 	gnuplot $<
