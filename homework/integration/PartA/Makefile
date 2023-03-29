@@ -25,4 +25,4 @@ matlib.dll : integrate.cs $(DIR)/complex/complex.cs $(DIR)/mixed/erf.cs
 
 i.PHONY: clean
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.data *.svg
+	-$(RM) out* *.txt *.exe *.dll *.data *.svg log*
