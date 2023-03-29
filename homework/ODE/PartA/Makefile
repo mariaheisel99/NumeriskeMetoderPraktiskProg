@@ -1,4 +1,4 @@
-all : Osc_friction.svg Out.debug.txt
+all : Osc_friction.svg Debug.svg 
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
@@ -8,8 +8,13 @@ DIR = ../../../matlib
 
 Osc_friction.svg : osc_friction.gpi Out.osc_friction.txt
 	gnuplot $<
+
+Debug.svg : debug.gpi Out.debug.txt
+	gnuplot $<
+
 Out.debug.txt : main.exe
 	mono $< 1> $@ 2> log
+
 Out.osc_friction.txt : main_osc_friction.exe
 	mono $< 1> $@ 2>log.osc_frition
 
@@ -25,4 +30,4 @@ matlib.dll : ode.cs $(DIR)/matrix/vector.cs $(DIR)/genlist.cs
 
 i.PHONY: clean
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.data
+	-$(RM) out* *.txt *.exe *.dll *.data *.svg

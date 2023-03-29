@@ -1,0 +1,15 @@
+set terminal svg
+set output "Debug.svg"
+set xlabel "x"
+set ylabel "y"
+set title "y''=-y"
+set terminal svg background "white"
+
+set key right top
+set grid
+
+set multiplot
+
+plot "Out.debug.txt" using 1:2 with lines title "sin(x)" \
+	, "Out.debug.txt" using 1:3 with lines title "cos(x)"
+
