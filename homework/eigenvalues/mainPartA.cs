@@ -8,6 +8,8 @@ public class main{
 	WriteLine("Part A:");
 	WriteLine("Genereate random 3x3 matrix A");
 	var A = matrix.random_matrix(3,3);
+	var transposeA = A.T;
+	transposeA.print("AT");
 	A.print("A=");	
 	
 	WriteLine("Perform eigenvalue-decomposition with jacobi algoritme");
