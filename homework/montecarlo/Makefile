@@ -1,27 +1,33 @@
-iall : PlainmcUnitCircle.svg
+iall : PlainmcUnitCircle.svg Out.txt
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
 DIR = ../../matlib
 
-PlainmcUnitCircle.svg : PlainmcUnitCircle.gpi Out.Circle.txt
+PlainmcUnitCircle.svg : PlainmcUnitCircle.gpi out.Circle.txt
 	gnuplot $<
 
 Ns = $$(seq 1000 1000 100000)
 
-Out.Circle.txt : main.exe
+out.Circle.txt : mainEnhedscirkel.exe
 	>$@
 	for N in $(Ns); do \
 	echo $$N; \
-	mono $< $$N >> $@ 2> log ; \
+	mono $< $$N >> $@ 2> log.circle ; \
 	done 
 
-main.exe : main.cs matlib.dll 
+Out.txt : main.exe
+	mono $< 1> $@ 2> log.out	
+
+mainEnhedscirkel.exe : mainEnhedscirkel.cs matlib.dll 
 	$(MKEXE)
 
-matlib.dll : montecarlo_integrator.cs $(DIR)/matrix/vector.cs 
-	 $(MKLIB)
+main.exe : main.cs matlib.dll
+	$(MKEXE)
+
+matlib.dll : montecarlo_integrator.cs $(DIR)/matrix/vector.cs  $(DIR)/mixed/gamma.cs 
+	 $(MKLIB) 
 
 
 i.PHONY: clean
