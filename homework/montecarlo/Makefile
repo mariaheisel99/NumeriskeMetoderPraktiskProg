@@ -5,7 +5,7 @@ MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
 DIR = ../../matlib
 
-PlainmcUnitCircle.svg : PlainmcUnitCircle.gpi out.Circle.txt
+PlainmcUnitCircle.svg : plainmcUnitCircle.gpi out.Circle.txt
 	gnuplot $<
 
 Ns = $$(seq 1000 1000 100000)

@@ -13,7 +13,8 @@ public class main{
 	vector b = new vector(1.0,PI/2.0); // upper limit
 	(double mean, double sigma) = montecarlo_integrator.plainmc(f,a,b,N);
 	double true_val = 1.0/2;
-	WriteLine($"The value is = {mean} with error {sigma} and the actual error fra true value: {Abs(mean-true_val)}");		
+	WriteLine($"The value is = {mean} with error {sigma}");
+	WriteLine($"The actual error from true value: {Abs(mean-true_val)}");		
 	Write("\n\n");
 	WriteLine("Integration of a 3 dimensional function (1-cos(x)*cos(y)*cos(z))^-1*pi^-3 with x[0,pi] and y[0,pi] and z[0,pi]");
 	Func<vector, double> g = x =>1.0/(1-Cos(x[0])*Cos(x[1])*Cos(x[2]))*Pow(PI,-3);
@@ -22,7 +23,8 @@ public class main{
 	(double mean2, double sigma2) = montecarlo_integrator.plainmc(g,c,d,N);
 	double true_val2= Pow(sfuns.gamma(1.0/4),4)/(4*Pow(PI,3));
 	Error.Write($"value {true_val2}");
-	WriteLine($"The value is = {mean2} with error {sigma2} and the actual error fra true value: {Abs(mean2-true_val2)}");		
+	WriteLine($"The value is = {mean2} with error {sigma2}");
+	WriteLine($"The actual error from true value: {Abs(mean2-true_val2)}");		
 	
 	
 		
