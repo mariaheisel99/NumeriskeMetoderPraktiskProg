@@ -1,0 +1,22 @@
+Jacobain matrix  = 
+         2 
+f(x) =         -1 
+Delta x solved =          1 
+x =       -0.5 
+Jacobain matrix  = 
+       NaN 
+f(x) =          0 
+Delta x solved =        NaN 
+x =          0 
+       NaN 
+Jacobain matrix  = 
+       5.2 
+f(x) =       9.59 
+Delta x solved =      -9.59 
+x =          3 
+Jacobain matrix  = 
+       NaN 
+f(x) =        NaN 
+Delta x solved =        NaN 
+x =       -1.8 
+       NaN 

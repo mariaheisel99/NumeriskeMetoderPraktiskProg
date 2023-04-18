@@ -1,8 +1,19 @@
 Integration test of a 2 dimensional function x*cos(y) with x[0,1] and y[0,pi/2]
-The value is = 0.498031380769523 with error 0.00178878218211749
-The actual error from true value: 0.0019686192304767
+ ### Plain Monte Carlo integration ### 
+result = 0.500634413490391 error 0.00180249531023066
+The actual error from true value: 0.000634413490391283
+
+ ### Quasi-random Monte Carlo integration ### 
+result = 0.500007938692961 error 0.00179568264385767
+The actual error from true value: 7.93869296056293E-06
+
 
 
 Integration of a 3 dimensional function (1-cos(x)*cos(y)*cos(z))^-1*pi^-3 with x[0,pi] and y[0,pi] and z[0,pi]
-The value is = 1.6378309502607 with error 0.284320401873144
-The actual error from true value: 0.244627073743308
+ ### Plain Monte Carlo integration ### 
+result = 1.37790309135573 error 0.0227339280445453
+The actual error from true value: 0.87790309135573
+
+ ### Quasi-random Monte Carlo integration ### 
+result = Infinity error NaN
+The actual error from true value: Infinity
