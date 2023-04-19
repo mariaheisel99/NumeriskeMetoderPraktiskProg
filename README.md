@@ -7,8 +7,9 @@
 | 4  | Splines               | 6 | 3 | - |  9  |
 | 5  | ODE                   | 6 | 3 | - |  9  |
 | 6  | Adaptive Integration  | 6 | 3 | - |  9  |
+| 7  | Monte Carlo           | 6 | 3 | - |  9  |
 |             ...                              |
  
 
-|                    total points: 56  |
+|                    total points: 65  |
 | ------------------------------------ |
