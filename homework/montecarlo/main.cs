@@ -11,8 +11,9 @@ public class main{
 	Func<vector, double> f = x =>x[0]*Cos(x[1]);
 	vector a = new vector(0,0); //lower limit
 	vector b = new vector(1.0,PI/2.0); // upper limit
+	int[] shift = new int[2] {0,2};
 	(double mean_plain, double sigma_plain) = montecarlo_integrator.plainmc(f,a,b,N);
-	(double mean_quasi, double sigma_quasi) = montecarlo_integrator.quasi_halton(f,a,b,N);
+	(double mean_quasi, double sigma_quasi) = montecarlo_integrator.quasi_halton(f,a,b,N,shift);
 	double true_val = 1.0/2;
 	WriteLine(" ### Plain Monte Carlo integration ### ");
 	WriteLine($"result = {mean_plain} error {sigma_plain}");
@@ -30,7 +31,7 @@ public class main{
 
 	(double mean_plain2, double sigma_plain2) = montecarlo_integrator.plainmc(g,c,d,N);
 
-	(double mean_quasi2, double sigma_quasi2) = montecarlo_integrator.quasi_halton(g,c,d,N);
+	(double mean_quasi2, double sigma_quasi2) = montecarlo_integrator.quasi_halton(g,c,d,N,shift);
 
 	double true_val2= Pow(sfuns.gamma(1.0/4),4)/(4*Pow(PI,3));
 	Error.Write($"value {true_val2}");

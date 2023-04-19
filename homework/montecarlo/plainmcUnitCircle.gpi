@@ -2,10 +2,24 @@ set terminal svg
 set output "PlainmcUnitCircle.svg"
 set xlabel "#Points"
 set ylabel ""
-set title "Unit Circle Plain MC"
 set terminal svg background "white"
 set key box top
 set grid 
-plot [0:100000] [0:0.06] "out.Circle.txt" using 1:3 with lines title "Estimated error" \
-	,  "out.Circle.txt"  using 1:4 with linespoints title "Actual error " \
-	, "out.Circle.txt"  using 1:5 with lines title "1/sqrt(n) fit to Actual error"
+set xrange [0:10000]
+set multiplot layout 2,1
+unset xlabel
+set title "Unit Circle Plain MC"
+set yrange [-0.005:0.15]
+f(x) = A*1/sqrt(x) + B
+fit f(x) "out.Circle.txt" using 1:4 via A,B
+plot "out.Circle.txt" using 1:3 with lines title "Estimated error" \
+	,  "out.Circle.txt"  using 1:4 with points pt 7 ps 0.5 title "Actual error " \
+	, f(x) lc 'black' title "1/sqrt(n) fit to Actual error"
+
+set title "Unit Circle Quasi MC"
+set xlabel "#Points"
+set yrange [-0.005:0.06]
+fit f(x) "out.Circle.txt" using 1:7 via A,B
+plot "out.Circle.txt" using 1:6 with lines title "Estimated error" \
+	,  "out.Circle.txt"  using 1:7 with points pt 7  ps 0.5 title "Actual error " \
+	, f(x) lc 'black' title "1/sqrt(n) fit to Actual error"

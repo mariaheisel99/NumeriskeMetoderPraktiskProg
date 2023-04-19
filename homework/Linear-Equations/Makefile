@@ -21,7 +21,7 @@ count.exe : count.cs matrix.dll QRGS.cs
 	mcs -target:exe -out:$@ \
 		$(filter %.cs,$^) $(addprefix -reference:,$(filter %.dll,$^))
 
-TimeQRGS.svg : time.gpi time.data nfit.data
+TimeQRGS.svg : time.gpi time.data
 	gnuplot $<	
 
 nfit.exe : nfit.cs

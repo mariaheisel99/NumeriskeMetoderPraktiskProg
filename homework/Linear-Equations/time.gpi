@@ -6,6 +6,8 @@ set title "Time for QRGS factorized"
 set terminal svg background "white"
 set key left top 
 
+f(x) = A*x**3+B
+fit f(x) "time.data" u 1:2 via A,B
 plot [400:1100] [0:20] "time.data" with points pt 7 title "Measured" \
-	, "nfit.data" with lines title "1.5e-8*N^3 fit"
+	, f(x) title "A*N^3+B fit"
 

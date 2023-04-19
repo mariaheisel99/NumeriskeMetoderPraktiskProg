@@ -1,4 +1,4 @@
-iall : PlainmcUnitCircle.svg Out.txt
+iall : PlainmcUnitCircle.svg ErrorEstimated.svg Out.txt
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
@@ -7,8 +7,10 @@ DIR = ../../matlib
 
 PlainmcUnitCircle.svg : plainmcUnitCircle.gpi out.Circle.txt
 	gnuplot $<
+ErrorEstimated.svg : errorComparing.gpi out.Circle.txt
+	gnuplot $<
 
-Ns = $$(seq 1000 1000 100000)
+Ns = $$(seq 10 1000 100000)
 
 out.Circle.txt : mainEnhedscirkel.exe
 	>$@
