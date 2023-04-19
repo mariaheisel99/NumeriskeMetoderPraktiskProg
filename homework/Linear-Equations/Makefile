@@ -1,4 +1,4 @@
-all : time.data Out.txt TimeQRGS.svg nfit.exe
+all : time.data Out.txt TimeQRGS.svg
 TIME = time -f --portability --append --output $@
 DIR = ../../matlib/matrix
 
@@ -23,12 +23,6 @@ count.exe : count.cs matrix.dll QRGS.cs
 
 TimeQRGS.svg : time.gpi time.data
 	gnuplot $<	
-
-nfit.exe : nfit.cs
-	mcs -target:exe -out:$@ \
-                $(filter %.cs,$^) 
-nfit.data : nfit.exe
-	mono $< > $@
 
 main.exe : main.cs QRGS.cs matrix.dll
 	mcs -target:exe -out:$@ \
