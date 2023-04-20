@@ -7,13 +7,13 @@ DIR = ../../matlib
 
 
 Out.txt : main.exe
-	mono $< 1> $@ 2> log.out	
+	mono $< 1> $@	
 
 
 main.exe : main.cs matlib.dll
 	$(MKEXE)
 
-matlib.dll :root_finder.cs $(DIR)/matrix/vector.cs  $(DIR)/matrix/matrix.cs $(DIR)/matrix/QRGS.cs 
+matlib.dll :root_finder.cs $(DIR)/matrix/vector.cs  $(DIR)/matrix/matrix.cs $(DIR)/matrix/QRGS.cs Root.cs jacobian.cs
 	 $(MKLIB) 
 
 

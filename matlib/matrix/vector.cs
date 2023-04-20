@@ -1,6 +1,7 @@
 // (C) 2020 Dmitri Fedorov; License: GNU GPL v3+; no warranty.
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using static System.Math;
 using static System.Console;
 public partial class vector{
@@ -10,20 +11,14 @@ private double[] data;
 public int size => data.Length;
 
 public double this[int i]{
+[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	get => data[i];
+[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	set => data[i]=value;
 }
 
 public vector(int n){data=new double[n];}
-public vector(double[] a){data=a;}
-public vector(double a)
-	{ data = new double[]{a}; }
-public vector(double a, double b)
-	{ data = new double[]{a,b}; }
-public vector(double a, double b, double c)
-	{ data = new double[]{a,b,c}; }
-public vector(double a, double b, double c, double d)
-	{ data = new double[]{a,b,c,d}; }
+public vector(params double[] list){data=list;}
 public vector(string s){
 	char[] separators={',',' '};
 	var options = StringSplitOptions.RemoveEmptyEntries;
@@ -34,7 +29,6 @@ public vector(string s){
                         this[i]=double.Parse(words[i]);
                         }
 	}
-
 
 public static implicit operator vector (double[] a){ return new vector(a); }
 public static implicit operator double[] (vector v){ return v.data; }

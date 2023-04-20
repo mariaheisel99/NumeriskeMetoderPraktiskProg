@@ -1,0 +1,45 @@
+dx test  7.45e-09 
+f(x) =         -1 
+fx =         -1 
+df =   1.49e-08 
+Jacobain matrix  = 
+         2 
+z =          0 
+dx test         0 
+f(x) =          0 
+fx =          0 
+df =          0 
+Jacobain matrix  = 
+       NaN 
+z =        NaN 
+       NaN 
+
+# Done #
+jacob cx rigtige   7.45e-09 
+J=
+         2 
+         0 
+
+ NEW CALCUALTION 
+
+dx test  4.47e-08 
+f(x) =       9.59 
+fx =       9.59 
+df =   2.32e-07 
+Jacobain matrix  = 
+       5.2 
+z =       -1.8 
+dx test  2.68e-08 
+f(x) =        NaN 
+fx =        NaN 
+df =        NaN 
+Jacobain matrix  = 
+       NaN 
+z =        NaN 
+       NaN 
+
+ # Done #
+jacob cx rigtige   4.47e-08 
+J=
+       5.2 
+     -6.59 

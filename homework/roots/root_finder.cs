@@ -6,45 +6,47 @@ using static System.Math;
 public static class root_finder{
 
 	public static vector newton(Func<vector, vector> f, vector x, double epsi = 1e-2){
-		
+		vector fx=f(x),z,fz;	
+		vector Deltax, dx;
 		int n = x.size;
-		var dfdx = new vector(n);
+		var df = new vector(n);
 		matrix J = new matrix(n,n);
-		double deltax = 0; 
-		vector Deltax = new vector(n);	
-	
+		double Delta = Pow(2,-26);	
 	
 		do{	
 			//Calculate the Jacobian matrix J
+			dx = x.map(t => Abs(t)*Delta);	
 			for (int k = 0;k<n; k++){
-				vector xs = x.copy();
-				deltax = Abs(x[k])*Pow(2,-26);
-				xs[k] = xs[k]+deltax;	
-				dfdx = (f(xs)-f(x))/deltax;
+				x[k] += dx[k];	
+				dx.print("dx test");
+				df = (f(x)-fx);
+				f(x).print("f(x) = ");
+				fx.print("fx = ");
+				df.print("df = " );
 					for(int i = 0; i<n; i++){
-						J[k,i] = dfdx[i];
-				}//for loop
+						J[k,i] = df[i]/dx[i];
+					x[k]-=dx[k];
+				}//for loop 
 			}//forloop
 			J.print("Jacobain matrix  = ");
-
-			//solve JDeltax = -f(x) for Deltax with QR
-			var test = f(x);
-			test.print("f(x) = ");
 			var (Q,R) = QRGS.dec(J);
 			Deltax = QRGS.solve(J,R,-1.0*f(x));
-			Deltax.print("Delta x solved = ");
-		
+			//Deltax.print("Delta x solved = ");
+			
 			double lambda = 1;
-			do {
-				lambda = lambda/2.0;
-			}while((f(x + lambda*Deltax)).norm() > (1-lambda/2.0)*(f(x)).norm() && lambda > 1/32);
-
-			x.print("x = ");	
-			x = x + lambda*Deltax;
+			do { //backtracing linesearch
+				lambda /= 2.0;
+				z = x + lambda*Deltax;
+				fz = f(z);
+			}while(fz.norm() > (1-lambda/2.0)*fx.norm() && lambda > 1/32);
+			z.print("z = ");	
+			x = z;
+			fx = fz;
 		
-		}while((f(x).norm() > epsi)  || (Deltax.norm() > deltax));
+		}while(fx.norm() > epsi  || (Deltax.norm() > dx.norm()));
 
 		return x;
+
 
 
 	}//newton
