@@ -1,45 +1,43 @@
-dx test  7.45e-09 
-f(x) =         -1 
-fx =         -1 
-df =   1.49e-08 
-Jacobain matrix  = 
-         2 
-z =          0 
-dx test         0 
-f(x) =          0 
-fx =          0 
-df =          0 
-Jacobain matrix  = 
-       NaN 
-z =        NaN 
-       NaN 
+ ----- Test of root finder methode by different one- and two-dimensional eq. ------ 
+ # Function to find root f(x)=x^2 # 
+start vector : 0.1
 
-# Done #
-jacob cx rigtige   7.45e-09 
-J=
-         2 
-         0 
+result =   0.000195 
+f(roots) =   3.81e-08 
+ The correct result for roots is x = 0
 
- NEW CALCUALTION 
 
-dx test  4.47e-08 
-f(x) =       9.59 
-fx =       9.59 
-df =   2.32e-07 
-Jacobain matrix  = 
-       5.2 
-z =       -1.8 
-dx test  2.68e-08 
-f(x) =        NaN 
-fx =        NaN 
-df =        NaN 
-Jacobain matrix  = 
-       NaN 
-z =        NaN 
-       NaN 
+ #### NEW CALCUALTION #### 
 
- # Done #
-jacob cx rigtige   4.47e-08 
-J=
-       5.2 
-     -6.59 
+
+ # Function to find root f(x) = 2*x*log(x)+x # 
+start vector : 1
+
+result =      0.607 
+f(roots) =   4.73e-11 
+ The correct result for roots is x = 1/sqrt(2)=0.60653
+
+
+ #### NEW CALCUALTION #### 
+
+
+ # Find roots for f(x,y) = (x-x*y,x^2-2) # 
+start vector : 2, 2
+
+result =       1.41          1 
+f(roots) =   -5.1e-11    4.6e-12 
+ Th correct result for roots is x = 1.41421, y =1
+
+
+ #### Extremum for Rosenbrock's vally #### 
+
+
+ # Find extremum for Rosenbrock's vally function by roots of gradient # 
+Rosenbrock's vallu function : f(x,y)=(1-x)^2+100(y-x^2)^2 
+ Gradient analytical: (-2*(1-x)-400*x*(y-x^2),200*(y-x^2))
+start vector : 2, 3
+
+result =          1          1 
+f(roots) =   2.96e-09  -1.42e-09 
+ The correct result for roots is x = 1, y =1
+ The found roots for gradient is the minimum extremum of Rosenbrock's vally funktion

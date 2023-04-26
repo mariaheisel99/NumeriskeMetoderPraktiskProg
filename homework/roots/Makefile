@@ -13,7 +13,7 @@ Out.txt : main.exe
 main.exe : main.cs matlib.dll
 	$(MKEXE)
 
-matlib.dll :root_finder.cs $(DIR)/matrix/vector.cs  $(DIR)/matrix/matrix.cs $(DIR)/matrix/QRGS.cs Root.cs jacobian.cs
+matlib.dll :root_finder.cs $(DIR)/matrix/vector.cs  $(DIR)/matrix/matrix.cs $(DIR)/matrix/QRGS.cs
 	 $(MKLIB) 
 
 
