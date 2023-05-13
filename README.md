@@ -8,8 +8,10 @@
 | 5  | ODE                   | 6 | 3 | - |  9  |
 | 6  | Adaptive Integration  | 6 | 3 | - |  9  |
 | 7  | Monte Carlo           | 6 | 3 | - |  9  |
+| 8  | Roots                 | 6 | - | - |  6  |
+| 9  | Minimization          | 6 | 3 | - |  9  |
 |             ...                              |
  
 
-|                    total points: 65  |
+|                    total points: 80  |
 | ------------------------------------ |
