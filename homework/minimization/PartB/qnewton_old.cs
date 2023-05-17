@@ -20,6 +20,24 @@ public static vector gradient(Func<vector,double>f, vector x){
 
 }//gradient
 
+public static matrix hessian(Func<vector,double> phi, vector x){
+	var n = x.size;
+	matrix H = new matrix(n,n);
+	Func<vector,vector> g = z => gradient(phi,z);
+	double delta = Pow(2,-13);
+	vector dx = new vector(n);
+	for(int i = 0; i<n;i++){dx[i]=Abs(x[i]*delta);}
+	vector gx = g(x);
+	for(int j=0;j<n;j++){
+		x[j]+=dx[j];
+		vector df = g(x)-gx;
+		for(int k = 0;k<n;k++){
+			H[k,j] = df[k]/dx[j];}
+		x[j]-=dx[j];
+	}//forloop
+	return H;
+
+}//hessian
 
 public static int minimum(
 	Func<vector,double>f, /* objective function */
@@ -28,9 +46,10 @@ public static int minimum(
 	){
 	vector gx=gradient(f,x);
 	double fx = f(x);
-	double epsilon = Pow(2,-20);
+	double epsilon = Pow(2,-26);
 	int step = 0;
 /*	
+ 
 	matrix H = hessian(f,x);
 	var (Q,R) = QRGS.dec(H);
 	matrix B = QRGS.inverse(H);
@@ -47,31 +66,28 @@ public static int minimum(
 		vector z; 
 		vector gz = new vector(n);
 		double fz;
-		double lambda = 1.0;
+		double lambda = 1;
 		do{ // backtracking linesearch
 			z = x+lambda*Dx;
 			fz = f(z);
-			gz = gradient(f,z);
 			if(fz < fx){/*accept step and update SR1*/
 				vector s = z-x;
+				gz = gradient(f,z);
 				vector y = gz-gx;
 				vector u = s-B*y;
 				double uTy = u%y;
-				if(Abs(uTy)> 1e-6){
+				if(Abs(uTy)> acc){
 					B.update(u,u,1/uTy);
-					}
-				break;
 				}
+			break;}
 			if(lambda < epsilon){
 				B.setid();
-				break;
-				}
+				break;}
 			lambda /= 2;			
 		}while(true);
 	x = z;
 	gx = gz;
 	fx = fz;
-//WriteLine($"gx.norm = {gx.norm()} acc = {acc}");
 	}//while
 	return step;
  

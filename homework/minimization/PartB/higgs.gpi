@@ -6,5 +6,8 @@ set terminal svg background "white"
 set key box top
 set grid
 set title "Higgs discovery"
+data_file = "Out.txt"
+parameteres = system('head -n 1 ' . data_file)
 plot "higgs.data" with yerrorbars pointtype 7 ps 0.5 lc rgb "red" title "Measured datapoints" \
-	, "Out.txt" using 1:2 with lines title "fit with minimization"
+	, data_file using 1:2 with lines title "Fit with minimization" \
+	, keyentry with labels nopoint title parameteres

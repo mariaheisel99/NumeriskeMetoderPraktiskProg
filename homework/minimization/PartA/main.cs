@@ -11,13 +11,15 @@ public static class main{
 		//
 		//
 		WriteLine("Minimum of Rosenbrock's vally function f(x,y)=(1-x)^2+100*(y-x^2)^2:");
-		Func<vector,double> F1 = (x) =>{return Pow(1-x[0],2)+100*Pow(x[1]-x[0]*x[0],2);};
-		vector vec1 = new vector(1,1);
+		//Func<vector,double> F1 = (x) =>{return Pow(1-x[0],2)+100*Pow(x[1]-x[0]*x[0],2);};
+		Func<vector,double> F1 = (x) =>{return Pow(1-x[0],2)+10*Pow(x[1]-x[0]*x[0],2);};
+		vector vec1 = new vector(2,1.6);
 		WriteLine($"Start guess is ({vec1[0]},{vec1[1]})");
 		int nsteps1 = qnewton.minimum(F1,ref vec1,epsi);
 		var GradF1 = qnewton.gradient(F1,vec1);
 		WriteLine($"The minimum is found be be: ({vec1[0]},{vec1[1]})");
 		WriteLine($"In the minimum the function Gradf(x,y) is: ({GradF1[0]},{GradF1[1]})");
+		WriteLine($"|Gradf(x,y)| = {GradF1.norm()}");
 		WriteLine("The theoretical is a minimum at (1,1) for grad(f(x,y))=0"); 
 		WriteLine($"Number of steps in caculation: {nsteps1}");
 		//

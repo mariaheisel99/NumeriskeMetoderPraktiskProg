@@ -48,14 +48,15 @@ static class main{
 
         datapoints = energy.Count;
 
-        vector start = new vector(6, 123, 3);
+        vector start = new vector(6, 120, 3);
         double A, m, G;
         vector vec = start.copy();
-        int nsteps = qnewton.minimum(Dbreitwigner, ref vec, 1e-6);
+        int nsteps = qnewton.minimum(Dbreitwigner, ref vec, 1e-2);
         A = vec[0]; m = vec[1]; G = vec[2];
-        Error.WriteLine($" A = {A}, m = {m}, G = {G}");
+        Error.WriteLine($" A = {Math.Round(A,2)}, m = {Math.Round(m,2)}, G = {Math.Round(G,2)}");
 	Error.WriteLine($" steps = {nsteps}");
 	
+        WriteLine($"A = {Math.Round(A,2)}, m = {Math.Round(m,2)}, G = {Math.Round(G,2)}");
 	for(double E = energy[0];E<energy[datapoints-1];E+=1.0/64){
 		WriteLine($"{E} {breitwigner(A,E,m,G)}");}
     }//Main
