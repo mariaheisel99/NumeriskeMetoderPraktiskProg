@@ -1,0 +1,12 @@
+set terminal svg
+set output "TestFunctionPlot.svg"
+set xlabel "x"
+set ylabel "y"
+set title "Neutral network curve fitting for test function"
+set terminal svg background "white"
+set grid
+set key top left 
+plot "TrainPointsA.txt" with points pt 2 title "Data"\
+	, "NetworkPointsA.txt" with lines title "Fit (ANN with n = 6)"
+
+
