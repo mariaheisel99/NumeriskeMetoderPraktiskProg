@@ -239,7 +239,7 @@ public static matrix random_matrix(int n, int m){
 	matrix A = new matrix(n,m);
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < m; j++){
-			A[i,j] = 1 + 10*rnd.NextDouble();
+			A[i,j] = 1 + 100*rnd.NextDouble();
 		}
 	}
 	return A;
@@ -251,6 +251,34 @@ public static vector random_vector(int n){
 	for(int i = 0; i<n;i++) b[i] = 1+15*rnd.NextDouble();
 	return b;	
 }
+
+
+public static matrix random_symmetric_matrix(int n){
+	var rnd = new System.Random();
+	matrix A = new matrix(n,n);
+	
+	for (int i = 0; i < n; i++){
+		for (int j = i; j<n;j++){
+		double val = 1 + 100*rnd.NextDouble();
+		A[i,j] = val;
+		A[j,i] = val;
+		}
+	}
+	return A;
+}
+
+public static bool isReal(double val){
+	return !double.IsNaN(val);}
+
+public static bool checkEigenvalues(matrix B){
+	int n = B.size2;
+	for (int i = 0; i < n;i++){
+		double eigenval = B[i,i];
+		if(eigenval <=0 || !isReal(eigenval)){return false;}
+}
+
+	return true;}
+
 
 		
 
