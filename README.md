@@ -10,8 +10,8 @@
 | 7  | Monte Carlo                   | 6 | 3 | - |  9  |
 | 8  | Roots                         | 6 | - | - |  6  |
 | 9  | Minimization                  | 6 | 3 | - |  9  |
-| 10 | Artificial Neural Networks    | 6 | - | - |  6  |
+| 10 | Artificial Neural Networks    | 6 | 3 | - |  6  |
  
 
-|                    total points: 86  |
+|                    total points: 89  |
 | ------------------------------------ |
