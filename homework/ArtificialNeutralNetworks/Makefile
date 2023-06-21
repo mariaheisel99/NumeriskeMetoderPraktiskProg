@@ -1,14 +1,17 @@
-iall : Out.txt TestFunctionPlot.svg
+iall : Out.txt TestFunctionPlotA.svg PlotB.svg
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
 DIR = ../../matlib
 
-TestFunctionPlot.svg : testPlot.gpi 
+PlotB.svg : plotB.gpi TrainPointsB.txt
 	gnuplot $<
 
-Out.txt TrainPointsA.txt : main.exe
+TestFunctionPlotA.svg : plotA.gpi TrainPointsA.txt
+	gnuplot $<
+
+Out.txt TrainPointsA.txt TrainPointsB.txt : main.exe
 	mono $< 1> $@ 
 
 
