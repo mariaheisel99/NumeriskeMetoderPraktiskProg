@@ -13,5 +13,5 @@
 | 10 | Artificial Neural Networks    | 6 | 3 | - |  6  |
  
 
-|                    total points: 86  |
+|                    total points: 89  |
 | ------------------------------------ |
