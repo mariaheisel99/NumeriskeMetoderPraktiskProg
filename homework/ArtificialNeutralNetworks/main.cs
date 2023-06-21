@@ -33,9 +33,9 @@ public class main{
 			Networkpoints.WriteLine($"{j} {network.response(j)}");		
 		}//forloop
 		Networkpoints.Close();
-
-
-		WriteLine("---------- Part B ----------");
+		WriteLine("\n The results are plotted on TestFunctionPlotA.svg");
+		
+		WriteLine("\n---------- Part B ----------");
 		WriteLine("Performing ANN on a Gaussian Wavlet f(x)=x*exp(-x^2)");
 		WriteLine("Return also first and second derivatives and the anti-dericative of the approximant to the Gaussain Wavlet");
 		
@@ -58,7 +58,7 @@ public class main{
 			derivatives.WriteLine($" {j} {network2.df_gaussianwavlet(j)} {network2.ddf_gaussianwavlet(j)} {network2.F_gaussianwavlet(j,-1)}");}
 		NetworkpointsB.Close();
 		derivatives.Close();
-
+		WriteLine("\n The results are plotted in a muliplot on PlotB.svg");
 		
 	}//Main
 
