@@ -5,7 +5,7 @@ using static System.Math;
 
 class main{
 public static void Main(){
-	WriteLine("Part A is performed where the linespline.cs is built with the procedurial style.\n The ");
+	WriteLine("Part A is performed where the linespline.cs is built with the procedurial style. \n # It does the interpolation with linesplines and also integrate the linear spline from point x0 to a given point. \n\n # The linearspline test is erformed on a cos(x) points. The result can be seen on PlotA.svg ");
 	StreamWriter datapoints = new StreamWriter("datapoints.txt", append:false);
 	StreamWriter linterpdata = new StreamWriter("linterpdata.txt", append:false);
 	StreamWriter linintgdata = new StreamWriter("linintgdata.txt", append:false);

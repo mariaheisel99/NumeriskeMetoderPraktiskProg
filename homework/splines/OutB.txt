@@ -1,0 +1,8 @@
+ PartB: Quadratic spline 
+
+ A quadriatic spline has been implemented with derivative and integral by Object oriented programming.
+Makes test points for three different tables 
+ * {xi = i,yi=1}, i = -5,...,5
+ * {xi = i,yi = xi}, i = -5,...,5 
+ * {xi = i, yi = xi^2}, i=-5,...,5
+
