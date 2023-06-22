@@ -21,4 +21,4 @@ matlib.dll : qnewton.cs $(DIR)/matrix/vector.cs  $(DIR)/matrix/matrix.cs $(DIR)/
 
 i.PHONY: clean
 clean:
-	-$(RM) out* *.txt *.exe *.dll *.data *.svg log*
+	-$(RM) out* *.txt *.exe *.dll *.svg log*

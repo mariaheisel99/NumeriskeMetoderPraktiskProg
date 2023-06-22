@@ -25,7 +25,7 @@ class main{
 		vector y = new vector(new double [] {117,100,88,72,53,29.5,25.2,15.2,11.1});
 
 		vector dy = new vector(new double [] {5,5,5,4,4,3,3,2,2});
-		var fs = new Func<double,double>[] {z=> 1.0, z => z};
+		var fs = new Func<double,double>[] {z=> 1.0, z => z, z =>z*z};
 
 		vector lny = new vector(y.size);
 		vector dlny = new vector(dy.size);
@@ -37,7 +37,7 @@ class main{
 		var (c,S) = LeastSquare.solQRdec(t, lny, dlny, fs); 		
 		c.print("c = ");
 		S.print("covariance matrix S = ");
-		double lna = c[0]; double lna_err = Sqrt(S[0,0]);
+		double lna = c[0]; double lna_err = Sqrt(S[0,0])i;
 		double a = Exp(lna); double a_err = Exp(lna_err);
 		double lambda = -c[1]; double lambda_err = Sqrt(S[1,1]);
 		outPartB.WriteLine("Reults with calculated uncertanities from the covariance matrix (printed in Out.txt)");

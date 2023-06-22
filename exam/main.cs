@@ -37,14 +37,14 @@ public static matrix positive_definite_matrix(int n){
 		WriteLine("\n ------ Part Two -------- ");
 		WriteLine("Implementation and test of linear equation solve, calcualtion of determinant, and inverse matrix");
 		
-		WriteLine("Solving");
+		WriteLine("\n * Solving an linear equation");
 		var b = matrix.random_vector(n);
 		b.print("b =");
 		var x = CholDec.solve(b);		
 		x.print("x = ");
 		WriteLine($"L*L.Tx=Ax=b ? =>  {(A*x).approx(b)}");
 
-		WriteLine("\n Determinant");
+		WriteLine("\n * Determinant of A");
 		var detA = CholDec.det();
 		WriteLine($"Determinanten af A = {detA}");
 

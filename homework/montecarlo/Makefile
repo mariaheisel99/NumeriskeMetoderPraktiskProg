@@ -10,7 +10,7 @@ PlainmcUnitCircle.svg : plainmcUnitCircle.gpi out.Circle.txt
 ErrorEstimated.svg : errorComparing.gpi out.Circle.txt
 	gnuplot $<
 
-Ns = $$(seq 10 1000 100000)
+Ns = $$(seq 1 100 100000)
 
 out.Circle.txt : mainEnhedscirkel.exe
 	>$@

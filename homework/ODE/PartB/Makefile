@@ -14,7 +14,7 @@ out.LotkaVolterraSystem.txt : main.exe
 main.exe : main.cs matlib.dll 
 	$(MKEXE)
 
-matlib.dll : ode.cs $(DIR)/matrix/vector.cs $(DIR)/genlist.cs
+matlib.dll : ode.cs $(DIR)/matrix/vector.cs $(DIR)/mixed/genlist.cs
 	 $(MKLIB)
 
 

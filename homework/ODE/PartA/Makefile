@@ -24,7 +24,7 @@ main.exe : main.cs matlib.dll
 main_osc_friction.exe : main_osc_friction.cs matlib.dll
 	$(MKEXE)
 
-matlib.dll : ode.cs $(DIR)/matrix/vector.cs $(DIR)/genlist.cs
+matlib.dll : ode.cs $(DIR)/matrix/vector.cs $(DIR)/mixed/genlist.cs
 	 $(MKLIB)
 
 
