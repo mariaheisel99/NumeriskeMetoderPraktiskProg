@@ -23,7 +23,8 @@ public static matrix positive_definite_matrix(int n){
 		WriteLine(" -------- Part one --------- ");
 		WriteLine("Implement of Cholesky decomposition of a real symmetric positive-definite matrix");
 		WriteLine("A real symmetric positive-definite matrix is given by:");
-		matrix A = positive_definite_matrix(4);
+		int n = 3; //matrix size
+		matrix A = positive_definite_matrix(n);
 		A.print("Matrix A =");
 		cholesky CholDec = new cholesky(A);
 		var L = CholDec.L;
@@ -36,11 +37,22 @@ public static matrix positive_definite_matrix(int n){
 		WriteLine("\n ------ Part Two -------- ");
 		WriteLine("Implementation and test of linear equation solve, calcualtion of determinant, and inverse matrix");
 		
-		var b = matrix.random_vector(4);
+		WriteLine("Solving");
+		var b = matrix.random_vector(n);
 		b.print("b =");
 		var x = CholDec.solve(b);		
 		x.print("x = ");
 		WriteLine($"L*L.Tx=Ax=b ? =>  {(A*x).approx(b)}");
 
+		WriteLine("\n Determinant");
+		var detA = CholDec.det();
+		WriteLine($"Determinanten af A = {detA}");
+
+		WriteLine("\n Inverse ");
+		var InvA = CholDec.inverse();
+		matrix I = new matrix(A.size1,A.size2);
+		I.set_identity();
+		InvA.print("Inverse A = ");
+		WriteLine($"A*A^-1 = I ? => {(A*InvA).approx(I)}");
 	}//Main
 }//class

@@ -42,4 +42,25 @@ public class cholesky{
 			
 		}//solve
 
+	public double det(){
+		double prod = 1;
+		var n = L.size2;
+		
+		for(int i = 0; i<n; i++) prod*=L[i,i];
+		double determinant = prod*prod;
+	return determinant;
+
+	}//determinant
+
+
+	public matrix inverse(){
+		var I = new matrix(L.size1,L.size2);
+		I.set_identity();//makes identity matrix from L dimensions
+		var B = new matrix(L.size1,L.size2); //empty matrix to put the inverse A
+		for(int i = 0;i<L.size1;i++){
+			B[i]=solve(I[i]);//solves Axi=LL.Txi=ei i times	
+		}
+	return B;
+	}//inverse		
+
 }//class

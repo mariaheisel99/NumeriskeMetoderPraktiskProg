@@ -2,18 +2,30 @@
 Implement of Cholesky decomposition of a real symmetric positive-definite matrix
 A real symmetric positive-definite matrix is given by:
 Matrix A =
-      98.3       45.1       32.7       14.3 
-      45.1       62.6       7.13       30.2 
-      32.7       7.13       80.6       13.4 
-      14.3       30.2       13.4       87.4 
+        96       34.2         14 
+      34.2       71.9       33.9 
+        14       33.9       34.5 
 Usinge the Chloesky decomposition the lower triangle matrix is given with
 L = 
-      9.91          0          0          0 
-      4.55       6.47          0          0 
-      3.29      -1.22       8.27          0 
-      1.44       3.66       1.59       8.33 
+       9.8          0          0 
+      3.49       7.73          0 
+      1.42       3.74       4.29 
 To check the decomposition L*L.T is calcualted and the test should be true for:
 L*L.T = A ? => True
-b =      12.5       1.95       10.3          7 
-x =      0.154     -0.131     0.0617     0.0907 
+
+ ------ Part Two -------- 
+Implementation and test of linear equation solve, calcualtion of determinant, and inverse matrix
+Solving
+b =      2.85       1.47       3.53 
+x =     0.0313    -0.0684      0.157 
 L*L.Tx=Ax=b ? =>  True
+
+ Determinant
+Determinanten af A = 105633.474991231
+
+ Inverse 
+Inverse A = 
+    0.0126   -0.00669    0.00149 
+  -0.00669     0.0295    -0.0263 
+   0.00149    -0.0263     0.0542 
+A*A^-1 = I ? => True
