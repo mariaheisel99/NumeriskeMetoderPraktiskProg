@@ -3,6 +3,7 @@ using static System.Console;
 using static System.Math;
 class main{
 
+
 static Func<double,vector,vector> F = delegate(double x, vector y){
 	return new vector (y[1],-y[0]);
 };//function

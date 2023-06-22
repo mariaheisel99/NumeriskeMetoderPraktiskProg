@@ -28,7 +28,7 @@ public static (vector, vector) rkstep45(
         vector y,                    /* the current value y(x) of the sought function */
         double h                     /* the step to be taken */
         ){
-        vector k0 = 0;     /* embedded lower order formula (Euler) */
+        //vector k0 = 0;     /* embedded lower order formula (Euler) */
         vector k1 = f(x,y); 
 	vector k2 = f(x+1.0/4*h,y+1.0/4*h*k1);
 	vector k3 = f(x+3.0/8*h,y+3.0/32*h*k1+9.0/32*h*k2);
