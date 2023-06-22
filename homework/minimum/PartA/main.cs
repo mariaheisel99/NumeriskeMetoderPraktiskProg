@@ -7,6 +7,7 @@ public static class main{
 	public static void Main(){
 		WriteLine(" #### Testing the method for Quasi newton and rand-1 update #### " );
 		WriteLine("");
+		WriteLine("For the alogorithm the number of steps are recored\n");
 		var epsi = 1e-5;
 		//
 		//

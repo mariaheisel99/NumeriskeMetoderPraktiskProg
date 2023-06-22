@@ -1,5 +1,7 @@
  #### Testing the method for Quasi newton and rand-1 update #### 
 
+For the alogorithm the number of steps are recored
+
 Minimum of Rosenbrock's vally function f(x,y)=(1-x)^2+100*(y-x^2)^2:
 Start guess is (2,1.6)
 The minimum is found be be: (0.999999346609459,0.999998454810039)
