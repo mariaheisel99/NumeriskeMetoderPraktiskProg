@@ -1,0 +1,43 @@
+############# Part A + B + C: ###########
+Check for QR dec:
+QR-dec for tall matrices
+A = 
+      49.5       97.5       7.84 
+      10.5       19.3       24.9 
+      33.3       28.5       61.7 
+      68.1       6.14       61.2 
+      24.9       34.9       88.6 
+      6.68       26.2       22.6 
+      10.4       54.5       99.6 
+      7.57       61.7         34 
+ n =8,m = 3
+Q = 
+     0.517       0.48     -0.608 
+      0.11     0.0885     0.0761 
+     0.349    -0.0221      0.209 
+     0.712     -0.531     0.0561 
+     0.261       0.11      0.473 
+    0.0699      0.186     0.0563 
+     0.109      0.417      0.592 
+    0.0792      0.509     0.0211 
+R = 
+      95.6       88.7        110 
+         0        107       44.9 
+         0          0        116 
+ Q^T*Q = 1 ? =>
+         1    1.6e-16  -5.88e-17 
+   1.6e-16          1   7.46e-17 
+ -5.88e-17   7.46e-17          1 
+It is shown that QR decomposition works due to R is m x m upper triangular and Q is n x m and Q^T*Q=1
+
+
+A and B are performed. Where the function ordinary_least_fit.cs are used where also the covariance and uncertinties are implemented.
+
+Measure of radioactivity of the element ThX at time, the data is defined and solving fit by QR decomposition. The fundtion that is fitted to is log(y)=log(a)-lambda*t. The fit result is the vector c:
+c =       4.95      -0.17 
+Covariance matrix S = 
+   0.00115  -0.000178 
+ -0.000178   4.83e-05 
+
+
+ * The data and result from fit with convariance (part B) is given in OutPartB.txt. The results from part C is seen on Plot.svg
