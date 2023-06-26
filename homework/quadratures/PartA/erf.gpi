@@ -7,7 +7,7 @@ set terminal svg background "white"
 set key right bottom width 1
 set pointintervalbox 3
 
-plot [-3:3] [-1.2:1.2] "Out.Erf.txt" index 0 with lines ls 1 lw 5 title "erf(z)"\
-	, "Out.Erf.txt" index 1 with points pointtype 5 ps 1 title "data (integral solved with integrator)"\
+plot [-3:3] [-1.2:1.2] "out.Erf.txt" index 0 with lines ls 1 lw 5 title "erf(z)"\
+	, "out.Erf.txt" index 1 with points pointtype 5 ps 1 title "data (integral solved with integrator)"\
 	, "../../../exercises/plots/ErfPlot/erf.data" with points pt 3 ps 0.5 title "Exercise result"
 
