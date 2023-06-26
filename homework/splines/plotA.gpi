@@ -4,9 +4,16 @@ set xlabel "x"
 set ylabel "y"
 set title "LinearSpline Interpolation"
 set terminal svg background "white"
-set key box top
-set grid 
-plot [-0.1:6.1] [-2:2.2] "datapoints.txt" using 1:2 with points pt 2 ps 2 title "datapoints cos(x)" \
+set key at graph 0.95, graph 0.95
+set grid
+set multiplot layout 2,1 rowsfirst
+  
+plot [-0.1:5.6] [-2:2.5] "datapoints.txt" using 1:2 with points pt 2 ps 2 title "datapoints cos(x)" \
 	, "linterpdata.txt" using 1:2 with lines title "linear interpolation points" \
 	, "linintgdata.txt" using 1:2 with lines title "integrated linint." 
+
+
+plot [-0.1:5.6] [0:23] "datapoints.txt" using 1:3 with points pt 2 ps 2 title "datapoints 2*x" \
+	, "linterpdata.txt" using 1:3 with lines title "linear interpolation points" \
+	, "linintgdata.txt" using 1:3 with lines title "integrated linint." 
 

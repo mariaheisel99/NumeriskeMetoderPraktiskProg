@@ -5,6 +5,7 @@ using static System.Math;
 class main{
 
     public static double Erffunc(double z){
+
         Func<double,double> f;
         if(z<0){
             var result1 = -Erffunc(-z);

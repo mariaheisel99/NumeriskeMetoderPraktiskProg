@@ -41,6 +41,7 @@ public static void Main(){
 		files[i].Close();
 	}//forloop	
 	
+	//WriteLine("Plots o
 
 }//MainB
 }//mainB class

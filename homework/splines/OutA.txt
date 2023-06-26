@@ -1,4 +1,4 @@
 Part A is performed where the linespline.cs is built with the procedurial style. 
  # It does the interpolation with linesplines and also integrate the linear spline from point x0 to a given point. 
 
- # The linearspline test is erformed on a cos(x) points. The result can be seen on PlotA.svg 
+ # The linearspline test is performed on a cos(x) points. The result can be seen on PlotA.svg 
