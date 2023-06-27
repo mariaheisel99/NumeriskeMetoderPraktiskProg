@@ -1,7 +1,7 @@
 ### Exercise perfomed: 
  complex, epsilon, gerneric_list, hello, inputoutput, math, multiprocessing, plots, vec
 
-### homeworks performed:
+### Homeworks performed:
  all homework is done. In the following table, the performed parts in the homework are written. In the homework different approaches were used. Some of them are divided into folders containing the part A, B, and C. In others, the part A,B and C are performed in the same folder and  overlap each other. In each homework, the Out.txt explain what is performed and where the result can be seen.  
 
 #### NumeriskeMetoderPraktiskProg
@@ -22,7 +22,7 @@
 |                    total points: 93  |
 | ------------------------------------ |
 
-### exam performed: exam project 14 Cholesky decomposition of a real symmetric positive-definite matrix
+### Exam performed: exam project 14 Cholesky decomposition of a real symmetric positive-definite matrix
 
 In the exam, the Cholesky decomposition of a real symmetric positive-definite matrix was implemented. This was done using the Cholesky–Crout algorithm which starts from the upper left corner of the matrix L and proceeds the matrix column by column.
  A = L*L^T
