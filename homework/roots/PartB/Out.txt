@@ -1,0 +1,16 @@
+8 0.001 0.01 0.01 -0.500356758131285
+
+
+------ Part B ------- 
+A hydrogen function is implemented that solved the radial Schrödinger equation at the lowest energy stat. This is done using the ODE solver from previusly homework. After this the root finding is used to estimate the energies for the solution of the hydrogens radial wave s-wave
+
+ Task: First the lowest root E0 are found for rmax = 8 this gave:
+Energy EO at rmax = 8: E0 = -0.500356758131285
+The loewst E0's wave function are plotted together with the exact result. See Plot_Swave.svg
+Investigation of convergence of the solutions toward the exact result of E0=-1/2 are performed for rmax, rmin and acc, eps of the ODE driver.
+ The default parameteres, that are not changed when the convergens for the other parameter are invested are
+ * rmax:8 
+ * rmin:0.001 
+ * acc:0.01 
+ * eps:0.01 
+ The result are seen on Convergens.svg

@@ -1,0 +1,12 @@
+set terminal svg
+set output "Plot_Swave.svg"
+set terminal svg background "white"
+
+
+set title "Lowest energy wave function with rmax = 8"
+set ylabel "F_0(r)"
+set xlabel "r"
+set size 0.7,0.5
+plot "wave_function.txt" using 1:2 with lines title "Estimated result"\
+	, "wave_function.txt" using 1:3 with lines title "Exact result"
+

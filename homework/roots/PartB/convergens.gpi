@@ -1,0 +1,36 @@
+set terminal svg
+set output "Plot_convergens.svg"
+set terminal svg background "white"
+set multiplot layout 2,2 rowsfirst
+
+set title "Rmax convergens"
+set ylabel "E_0"
+set xlabel "rmax"
+set key top right
+plot [0:10.2][-1:2.6] "convergens.txt" index 0 using 1:5 with points pt 7 pointsize 0.6 title "Analytic"\
+        , -0.5 with lines linetype 2 title "exact"
+
+set title "Rmin convergens"
+set ylabel "E_0"
+set xlabel "rmin"
+set key bottom right
+plot [0:0.5][-0.3:-0.8]"convergens.txt" index 1 using 2:5 with points pt 7 ps 0.6 title "Analytic"\
+        , -0.5 with lines linetype 2 title "exact"
+
+set title "Acc convergens"
+set ylabel "E_0"
+set xlabel "acc"
+set logscale x
+set xtics (1e-8, 1e-4, 1e-1)
+set key top right
+plot [1e-8:1e-1][-0.4998:-0.502]"convergens.txt" index 2 using 3:5 with points pt 7 ps 0.6 title "Analytic"\
+        , -0.5 with lines linetype 2 title "exact"
+
+set title "Eps convergens"
+set ylabel "E_0"
+set xlabel "eps"
+set key top right
+set xtics (1e-8, 1e-4, 1e-1)
+set logscale x
+plot [1e-8:1e-1][-0.4998:-0.501] "convergens.txt" index 3 using 4:5 with points pt 7 ps 0.6 title "Analytic "\
+        , -0.5 with lines linetype 2 title "exact"
