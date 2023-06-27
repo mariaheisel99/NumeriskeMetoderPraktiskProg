@@ -1,6 +1,8 @@
-Exercise perfomed: complex, epsilon, gerneric_list, hello, inputoutput, math, multiprocessing, plots, vec
+# Exercise perfomed: 
+ complex, epsilon, gerneric_list, hello, inputoutput, math, multiprocessing, plots, vec
 
-homeworks performed: all homework is done. In the following table the performed parts in the homework are written. In the homework different approaches were used. Some of them are divived into folder containing the part A, B, and C. In others, the part A,B and C are performed in the same folder and  overlap each other. In each homework, the Out.txt explain what is performed and where the result can be seen.  
+#homeworks performed:
+ all homework is done. In the following table the performed parts in the homework are written. In the homework different approaches were used. Some of them are divived into folder containing the part A, B, and C. In others, the part A,B and C are performed in the same folder and  overlap each other. In each homework, the Out.txt explain what is performed and where the result can be seen.  
 
 # NumeriskeMetoderPraktiskProg
 | #  |    homework                   | A | B | C | Σ   |
@@ -20,8 +22,20 @@ homeworks performed: all homework is done. In the following table the performed 
 |                    total points: 93  |
 | ------------------------------------ |
 
-exam performed : exam project 14 Cholesky decomposition of a real symmetric positive-definite matrix
+# exam performed : exam project 14 Cholesky decomposition of a real symmetric positive-definite matrix
 
-In the exam the Cholesky decomposition of a real symmetric positive-definite matrix are implemented. This is done using the Cholesky–Crout algorithm which starts from the upper left corner of the matrix L and proceeds the matrix column by column.  The decompostion is inside cholesky.cs.
+In the exam the Cholesky decomposition of a real symmetric positive-definite matrix are implemented. This is done using the Cholesky–Crout algorithm which starts from the upper left corner of the matrix L and proceeds the matrix column by column.
+A = L*L^T
+The decompostion is inside cholesky.cs.
 
-The cholesky.cs contains a class cholesky that continas a matrix L, which is to store the lower triangular matrix L. 
+The cholesky.cs contains a class cholesky that contain a matrix L, which is to store the lower triangular matrix L.  It is build with object-oriented programming with different separat methodes (constructor, solve, det, inverse)
+
+* A constructor cholesky(matrix A) takes matrix A as input and perform Cholesky decomposition on the matrix A.  
+* solve(vector b) is to solve equation Ax=b. It returns the solution vector x.
+This is done first with forward substitution method to solve equation Ly=b, where L is the lower triangular matrix. After this beackward substitution method is used to sole equation L^T*x=y.
+* the methode det() calculated the determinant of the input matrix using the cholesky decomposition. Det(A)=Det(LL^T)=Det(L)Det(Æ^T)=Det(L)^2. Due to L beign lower triangular the determinant of L is the product of the diagonal elements in L. 
+* The methode inverse() findes the inverse of matrix A by solving Axi=LL^Txi=ei i times. 
+
+Beside teh build cholesky.cs a methode is added to the matrix.cs files. This the random_symmetric_matrix(int n) that takes integer n and construct a random symmetric matrix, also IsReal(double val) and checkEigenvalues(matrix B) are implemnted. That check for real and positive eigenvalues. This methodes are implemented sush that the main.cs in the exam first havea methode cales positive_definite_matrix(int n), that returns a positive definite matrix with n dimension. It construct a symmetric matrix and uses jacobi.cyclic to finde the eigenvalues and thereafter check for real and postive eigenvalues. This gives per definition a psotive definite matrix due to matrix M beign positive-definite if M is symmetic and all eigenvalues are positive and real. 
+
+In the main.cs different test and calcualtion are beformed. This is lined out in the Out.txt.  
