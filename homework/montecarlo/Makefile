@@ -1,16 +1,16 @@
-iall : PlainmcUnitCircle.svg ErrorEstimated.svg Out.txt
+iall : mcUnitCircle.svg ErrorEstimate.svg Out.txt
 DLLS = $(addprefix -reference:,$(filter %.dll,$^))
 CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
 DIR = ../../matlib
 
-PlainmcUnitCircle.svg : plainmcUnitCircle.gpi out.Circle.txt
+mcUnitCircle.svg : plainmcUnitCircle.gpi out.Circle.txt
 	gnuplot $<
-ErrorEstimated.svg : errorComparing.gpi out.Circle.txt
+ErrorEstimate.svg : errorComparing.gpi out.Circle.txt
 	gnuplot $<
 
-Ns = $$(seq 1 100 100000)
+Ns = $$(seq 1 1000 100000)
 
 out.Circle.txt : mainEnhedscirkel.exe
 	>$@

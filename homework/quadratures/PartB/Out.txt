@@ -17,3 +17,4 @@ Result with transformation -3.99987385646141. Called 96
 
 
  result for ln(x)/Sqrt(x) is . -3.999999999999974 and it is called 315
+ test 0.00373605882543345

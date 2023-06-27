@@ -1,5 +1,5 @@
 set terminal svg
-set output "PlainmcUnitCircle.svg"
+set output "mcUnitCircle.svg"
 set xlabel "#Points"
 set ylabel ""
 set terminal svg background "white"

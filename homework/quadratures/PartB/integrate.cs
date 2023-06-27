@@ -3,7 +3,7 @@ using static System.Console;
 using static System.Math;
 
 public class integrate{
-	public static double integrator
+	public static (double,double) integrator
 		(Func<double, double> f,
 		double a,
 		double b,
@@ -18,12 +18,18 @@ public class integrate{
 	double q = (f1+f2+f3+f4)/4*(b-a); // the lower order rule
 	double err = Abs(Q-q); //the difference in higher and lower order
 	double tol = delta + epsi*Abs(Q);
-	if (err <= tol) return Q;
-	else return integrator(f,a,(a+b)/2,delta/Sqrt(2),epsi,f1,f2)+integrator(f,(a+b)/2,b,delta/Sqrt(2),epsi,f3,f4);
+	if (err <= tol) return (Q,err);
+	else{ 
+		var (res1,err1) = integrator(f,a,(a+b)/2,delta/Sqrt(2),epsi,f1,f2);
+		var (res2, err2) = integrator(f,(a+b)/2,b,delta/Sqrt(2),epsi,f3,f4);
+		return (res1+res2, err1+err2);
+	 }
+	
+	
 	}//integrate
 
 
-	public static double ClenshawCurtisTransformation
+	public static (double,double) ClenshawCurtisTransformation
 		(Func<double, double> f,
                 double a,
                 double b,

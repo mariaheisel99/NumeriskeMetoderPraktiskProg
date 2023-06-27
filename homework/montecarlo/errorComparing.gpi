@@ -1,5 +1,5 @@
 set terminal svg
-set output "ErrorEstiamed.svg"
+set output "ErrorEstimate.svg"
 set xlabel "#Points"
 set ylabel ""
 set terminal svg background "white"
@@ -7,6 +7,6 @@ set key box top
 set grid 
 set title "Unit Circle Plain MC"
 set logscale xy  
-plot [1:1000001] [0.0001:10] "out.Circle.txt" using 1:3 with lines title "PlainMC error datapoints"\
-	, "out.Circle.txt" using 1:6 with lines title "QuasiMC error datapoint" 
+plot [1:1000001] [0.0001:10] "out.Circle.txt" using 1:3 with points title "PlainMC error datapoints"\
+	, "out.Circle.txt" using 1:6 with points title "QuasiMC error datapoint" 
 

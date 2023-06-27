@@ -4,11 +4,11 @@ For the alogorithm the number of steps are recored
 
 Minimum of Rosenbrock's vally function f(x,y)=(1-x)^2+100*(y-x^2)^2:
 Start guess is (2,1.6)
-The minimum is found be be: (0.999999346609459,0.999998454810039)
-In the minimum the function Gradf(x,y) is: (8.84053145379256E-06,-4.61917476174189E-06)
-|Gradf(x,y)| = 9.97455622396349E-06
+The minimum is found be be: (0.999993435870683,0.999986834035715)
+In the minimum the function Gradf(x,y) is: (7.94638636721451E-06,-6.05965137434919E-06)
+|Gradf(x,y)| = 9.99321925486E-06
 The theoretical is a minimum at (1,1) for grad(f(x,y))=0
-Number of steps in caculation: 1616
+Number of steps in caculation: 9204
 
  ------------------------------ 
  

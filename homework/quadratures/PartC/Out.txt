@@ -1,0 +1,23 @@
+ ###### Test of  (open quandrature) adaptive integrator with Clenshaw–Curtis variable transformation for some (converging) infitine limit integrals and added error estimation ######
+ Test pefromed with some integrals. Comapared with python integration routines with the same tolerance
+
+
+ # Integrating Exp(-x*x) from -inf to inf
+Result: 1.77240327618564  , error: 0.00217136116259951
+Called 80
+ #### results from python scipy is given as: ####
+ result for exp(-x*x) is 1.7724538509067376 and it is called 150. It should be noted that scipy gave 4e-6 error
+
+
+ # Integrating Exp(x) from -inf to 0
+Result: 0.998396771291765  , error: 0.0017207523769629
+Called 32
+ #### results from python scipy is given as: ####
+ result for exp(x) is 0.9999999997018258 and it is called 75. It should be noted that scipy gave 5e-5 error
+
+
+ # Integrating 1/x^2 from 1 to inf
+Result: 0.999978183833389  , error: 0.00203911216073227
+Called 24
+ #### results from python scipy is given as: ####
+ result for 1/x^2 is 1.0 and it is called 15. It should be noted that scipy gave 1e-14 error
