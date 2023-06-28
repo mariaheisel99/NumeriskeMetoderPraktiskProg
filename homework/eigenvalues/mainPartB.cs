@@ -38,10 +38,12 @@ public static void Main(string [] args){
 	WriteLine("A calculation of the hydrogen has been performed by following investigations:");
 	WriteLine(" ** Convergens have beeen investigated on Dr_convergens.svg and Rmax_convergens.svg for severeal dr and rmax values");
 	WriteLine(" ** Plot of different lowest eigen-functions are performed for different dr and rmax paramerets. The result are shown on Wave.svg. The exponentiel analytical function are also demonstrated.");
+	double a0 = 0.529;
 
 	using (StreamWriter file1 = new StreamWriter("output_analytical_wave.txt", false)){
 	for(int i = 0; i < 100; i++){
-		file1.WriteLine($"{i/10.0}\t{Exp(-i/10.0)}");}
+		var r = i/10.0;
+		file1.WriteLine($"{r}\t{Pow(2*r*Exp(-r),2)}");}
 	}
 		}
 

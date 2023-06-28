@@ -6,8 +6,8 @@ set xlabel "r [Bohr radii]"
 set ylabel "R(r)"
 set tics out
 set title "Hydrogen electron lowest radial wave functions with different parameters"
-plot "wave.txt" index 0 with lines title "dr = 0.1, rmax = 10"  \
-	,"wave.txt" index 1 with lines title "dr = 0.3, rmax = 10"  \
-	,"wave.txt" index 2 with lines title "dr = 0.1, rmax = 4"  \
-	,"wave.txt" index 3 with lines title "dr = 0.3, rmax = 4", \
+plot "wave.txt" index 0 using 1:2 with lines title "dr = 0.1, rmax = 10"  \
+	,"wave.txt" index 1 using 1:2 with lines title "dr = 0.3, rmax = 10"  \
+	,"wave.txt" index 2 using 1:2 with lines title "dr = 0.1, rmax = 4"  \
+	,"wave.txt" index 3 using 1:2 with lines title "dr = 0.3, rmax = 4", \
 	 "output_analytical_wave.txt" using 1:2 with lines title "Analytical" 
