@@ -4,11 +4,10 @@ CODE = $(filter %.cs,$^)
 MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
 DIR = ../matlib
-
+TIME = time -f --portability --append --output $@
 
 Out.txt : main.exe
 	mono $< 1> $@ 
-
 
 main.exe : main.cs matlib.dll
 	$(MKEXE)

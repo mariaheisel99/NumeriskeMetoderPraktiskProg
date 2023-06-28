@@ -39,3 +39,13 @@ This is done first with forward substitution method to solve equation Ly=b, wher
 Beside teh build cholesky.cs a methode is added to the matrix.cs files. This the random_symmetric_matrix(int n) that takes integer n and construct a random symmetric matrix, also IsReal(double val) and checkEigenvalues(matrix B) are implemnted. That check for real and positive eigenvalues. This methodes are implemented sush that the main.cs in the exam first havea methode cales positive_definite_matrix(int n), that returns a positive definite matrix with n dimension. It construct a symmetric matrix and uses jacobi.cyclic to finde the eigenvalues and thereafter check for real and postive eigenvalues. This gives per definition a psotive definite matrix due to matrix M beign positive-definite if M is symmetic and all eigenvalues are positive and real. 
 
 In the main.cs different test and calcualtion are beformed. This is lined out in the Out.txt.  
+
+Performed is 
+- [x] Implemented Cholesky decompotion using Cholesky-Crout algorithm
+- [x] Implemented linear equation solver
+- [x] Implemented calculation of determinant
+- [x] Implemented calculation of inverse matrix
+
+To furhter investigation operations count for the Cholesky decompostion could have been performed. This was also tried implemented. But due to the positive-definite matrix generating included check for eigenvalues (jacobi.cs used) already the dimension n=7 took to long to genereate the positive-definite-matrix and therefor the operation count was not excecuted. It was expected to scale with O(n^3).
+
+I rate the exam project 9/10 due to not being able of determine the operation count and compare to eg. LU-decompostion or QR-factorize. 

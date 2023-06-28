@@ -1,15 +1,17 @@
  -------- Part one --------- 
 Implement of Cholesky decomposition of a real symmetric positive-definite matrix
-A real symmetric positive-definite matrix is given by:
+A real symmetric positive-definite matrix is constructed with dimension n=3:
 Matrix A =
-      93.9       67.2       23.8 
-      67.2       72.4       27.2 
-      23.8       27.2       25.6 
-Usinge the Chloesky decomposition the lower triangle matrix is given with
+      50.9       36.7       31.2 
+      36.7       36.6       13.7 
+      31.2       13.7       71.8 
+The matrix A is symmetric and square. The eigenvalues of A should be positive, which are checked for when genereating A.
+Usinge the Chloesky decomposition the lower triangular matrix is given with
 L = 
-      9.69          0          0 
-      6.94       4.93          0 
-      2.46       2.06       3.91 
+      7.14          0          0 
+      5.14       3.19          0 
+      4.37      -2.76       6.72 
+It is seen that L is a lower triangular matrix as aspected.
 To check the decomposition L*L.T is calcualted and the test should be true for:
 L*L.T = A ? => True
 
@@ -17,16 +19,53 @@ L*L.T = A ? => True
 Implementation and test of linear equation solve, calcualtion of determinant, and inverse matrix
 
  * Solving an linear equation
-b =      8.69       3.11       12.7 
-x =      0.219      -0.45      0.769 
+The A matrix is used to solve Ax=b, here b also have the dimension 3:
+b =        12       2.14       1.08 
+Using the implemented solve in class of cholesky the solution x is:
+x =       1.03     -0.872     -0.265 
+Check for the solution x is performed:
 L*L.Tx=Ax=b ? =>  True
 
- Determinant
-Determinanten af A = 34863.1881827187
+ * Determinant of A
+Determinanten af A = 23358.9211668647
 
- Inverse 
+ * Inverse 
 Inverse A = 
-    0.0319    -0.0307    0.00296 
-   -0.0307     0.0526    -0.0273 
-   0.00296    -0.0273     0.0654 
+     0.105    -0.0946    -0.0274 
+   -0.0946      0.115     0.0192 
+   -0.0274     0.0192     0.0222 
+To check if the inverse A is correct, it is check whether A*A^-1 = I, where I is the identity matrix
 A*A^-1 = I ? => True
+ 
+
+ ---- Same test as above no performed for n=5 dimension for matrix M
+Matrix M =
+      64.3       6.88       23.1       9.37       48.5 
+      6.88       83.2       52.4       9.13       6.83 
+      23.1       52.4       74.9       38.1       27.5 
+      9.37       9.13       38.1       81.6       20.9 
+      48.5       6.83       27.5       20.9       49.3 
+L = 
+      8.02          0          0          0          0 
+     0.858       9.08          0          0          0 
+      2.88        5.5       6.03          0          0 
+      1.17      0.895       4.95       7.41          0 
+      6.04      0.181        1.5      0.845       3.13 
+L*L.T = M ? => True
+
+ * Solving an linear equation
+b =      11.5       4.88       6.22       10.8       5.78 
+x =      0.468     0.0769    -0.0742      0.207     -0.399 
+L*L.Tx=Mx=b ? =>  True
+
+ * Determinant of M
+Determinanten af M = 104092387.842955
+
+ * Inverse of M 
+Inverse M = 
+    0.0668   -0.00157    0.00115    0.00996    -0.0703 
+  -0.00157     0.0258     -0.024    0.00627    0.00864 
+   0.00115     -0.024     0.0422    -0.0132    -0.0157 
+   0.00996    0.00627    -0.0132     0.0195    -0.0116 
+   -0.0703    0.00864    -0.0157    -0.0116      0.102 
+M*M^-1 = I ? => True
