@@ -48,5 +48,5 @@ Performed is
 
 For further investigate operations count for the Cholesky decomposition could have been performed. This was also tried to implement. But due to the positive-definite matrix generating including a check for eigenvalues (jacobi.cs used) already the dimension n=7 took too long to generate the positive-definite-matrix and therefore the operation count was not executed. It was expected to scale with O(n^3).
 
-I rate the exam project 9/10 due to not being able to determine the operation count and compare it to eg. LU-decomposition or QR-factorize. 
+I rate the exam project 9.5/10 due to not being able to determine the operation count and compare it to eg. LU-decomposition or QR-factorize. But still, I finished all the mentioned implementations. 
 
