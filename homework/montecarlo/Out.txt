@@ -1,22 +1,22 @@
 -----Two and three dimensional integral with MC routin for both part A (plain) and the quasi-random sequence part B. ----
 * Integration test of a 2 dimensional function x*cos(y) with x[0,1] and y[0,pi/2]
  ### Plain Monte Carlo integration ### 
-result = 0.499283483251895 error 0.00178420668713927
-The actual error from true value: 0.000716516748104634
+result = 0.500628771715748 error 0.0017879771350409
+The actual error from true value: 0.000628771715748488
 
  ### Quasi-random Monte Carlo integration ### 
-result = 0.500044194516213 error 3.74575511284127E-05
-The actual error from true value: 4.41945162131807E-05
+result = 0.250003368482542 error 7.49151022568289E-05
+The actual error from true value: 0.249996631517458
 
 
 
  * Integration of a 3 dimensional function (1-cos(x)*cos(y)*cos(z))^-1*pi^-3 with x[0,pi] and y[0,pi] and z[0,pi]
  ### Plain Monte Carlo integration ### 
-result = 1.34346568986307 error 0.01172156632016
-The actual error from true value: 0.843465689863074
+result = 1.39959021350953 error 0.0173011921822229
+The actual error from true value: 0.899590213509531
 
  ### Quasi-random Monte Carlo integration ### 
-result = 1.36712240983543 error 0.00744291559678528
-The actual error from true value: 0.0260814666819631
+result = 0.679839747119324 error 0.0148858311935704
+The actual error from true value: 0.713364129398073
  ---- A calculateion of area on unit circle is performed with both MC integrator ( pseudo-random and quasi-radnaom) -----
  The results are seen in the mcUNitCircle.svg and ErrorEstiamed.svg. It is checked to scale with 1/sqrt(N)

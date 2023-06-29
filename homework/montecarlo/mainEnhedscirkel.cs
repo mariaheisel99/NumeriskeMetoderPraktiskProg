@@ -20,7 +20,7 @@ public class main{
 	(double mean_quasi, double sigma_quasi) = montecarlo_integrator.quasi_halton(f,a,b,N,shift);
 	double true_val = PI;
 	double fit = 1.0/Sqrt(N);
-	WriteLine($"{N} {mean_plain} {sigma_plain} {Abs(mean_plain-true_val)} {mean_quasi} {sigma_quasi} {Abs(mean_quasi - true_val)} {fit}");		
+	WriteLine($"{N} {mean_plain} {sigma_plain} {Abs(true_val-mean_plain)} {mean_quasi} {sigma_quasi} {Abs(true_val-mean_quasi)} {fit}");		
 	
 		
 	}//Main
