@@ -34,7 +34,6 @@ public static void Main(){
 	Write("\n\n");	
 	WriteLine(" result for ln(x)/Sqrt(x) is . -3.999999999999974 and it is called 315");
 
-	WriteLine($" test {err_w_trans2}");
 
 }//Main
 
