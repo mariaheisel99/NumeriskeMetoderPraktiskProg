@@ -5,13 +5,13 @@ MKEXE = mcs -target:exe -out:$@ $(DLLS) $(CODE)
 MKLIB = mcs -target:library -out:$@ $(DLLS) $(CODE)
 DIR = ../../matlib
 
-PlotB.svg : plotB.gpi TrainPointsB.txt
+PlotB.svg : plotB.gpi trainPointsB.txt
 	gnuplot $<
 
-TestFunctionPlotA.svg : plotA.gpi TrainPointsA.txt
+TestFunctionPlotA.svg : plotA.gpi trainPointsA.txt
 	gnuplot $<
 
-Out.txt TrainPointsA.txt TrainPointsB.txt : main.exe
+Out.txt trainPointsA.txt trainPointsB.txt : main.exe
 	mono $< 1> $@ 
 
 

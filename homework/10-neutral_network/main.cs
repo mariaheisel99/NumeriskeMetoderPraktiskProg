@@ -12,7 +12,7 @@ public class main{
 		Func<double,double> g = x => Cos(5*x-1)*Exp(-x*x);// test function g(x)
 		//constructing x- and y-points
 		WriteLine("Construting x and y trainingpoitns on the interval of -1 to 1 wiht 20 points. The Network is set up with 6 neurons");
-		var outpoints = new StreamWriter("TrainPointsA.txt");
+		var outpoints = new StreamWriter("trainPointsA.txt");
 		int m = 20; //number of points
 		double a = -1, b = 1; //interval
 		vector xs = new vector(m), ys = new vector(m);
@@ -23,7 +23,7 @@ public class main{
 		 }//for loop
 		outpoints.Close();
 		//setting op network
-		var Networkpoints = new StreamWriter("NetworkPointsA.txt");
+		var Networkpoints = new StreamWriter("networkPointsA.txt");
 		int n = 6;
 		ann network = new ann(n,g);
 		//Error.WriteLine($" newtork n = {network.n}");
@@ -41,15 +41,15 @@ public class main{
 		
 		Func<double,double> Gw = x => x*Exp(-x*x); //Gaussian Wavelet
 		WriteLine("Construting x and y trainingpoitns on the interval of -1 to 1 wiht 20 points. The Network is set up with 5 neurons");
-		var outpointsB = new StreamWriter("TrainPointsB.txt");
+		var outpointsB = new StreamWriter("trainPointsB.txt");
 		vector x_s = new vector(m), y_s = new vector(m);
 		for(int i = 0; i< m;i++){ //equal distributed uniform points
 			x_s[i] = a+(b-a)*i/(m-1);
 			y_s[i] = Gw(x_s[i]);
 			outpointsB.WriteLine($"{x_s[i]} {y_s[i]}");}
 		outpointsB.Close();
-		var NetworkpointsB = new StreamWriter("NetworkPointsB.txt");
-		var derivatives = new StreamWriter("DerivativesB.txt");
+		var NetworkpointsB = new StreamWriter("networkPointsB.txt");
+		var derivatives = new StreamWriter("derivativesB.txt");
 		int N = 10;
 		ann network2 = new ann(N,Gw);
 		network2.train(x_s,y_s);
